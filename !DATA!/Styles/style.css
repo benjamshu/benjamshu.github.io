@@ -1,0 +1,426 @@
+/*
+NOTES:
+
+    colours:
+      - red : important
+      - yellow : outdated / deleted
+      - purple : new / updated / recent
+
+*/
+
+/*  AT-RULES  */
+
+@import url(../Fonts/mplus-2m.css);
+
+/*  GLOBAL RULES  */
+
+*[title]:not([title=""]):not(a) {
+    cursor: help;
+    border-bottom: dotted currentColor black;
+}
+@supports (text-decoration-style: dotted) or (-moz-text-decoration-style: dotted) or (-webkit-text-decoration-style: dotted) {
+    abbr {
+        border: none;
+    }
+    *[title]:not([title=""]):not(a) {
+        border: none;
+        -webkit-text-decoration-line: underline;
+        -webkit-text-decoration-style: dotted;
+        -moz-text-decoration-line: underline;
+        -moz-text-decoration-style: dotted;
+        text-decoration-line: underline;
+        text-decoration-style: dotted;
+    }
+}
+*:lang(en) {
+    quotes: "“" "”" "‘" "’";
+}
+*:lang(*-fonipa)::before, *:lang(*-fonipa)::after {
+    content: "/";
+}
+
+/*  PRE-CSS4 SELECTION RULES  */
+*::selection {
+    background: #e8e8e8;
+}
+*::-moz-selection {
+    background: #e8e8e8;
+}
+mark::selection, mark *::selection {
+    background: #b3b3b3;
+}
+mark::-moz-selection, mark *::-moz-selection {
+    background: #b3b3b3;
+}
+
+/*  ROOT STYLES  */
+*:root {
+    color: #484848;
+    font-family: "m+ 2m", monospace;
+    font-weight: 300;
+    font-size: 1.25pc;
+    font-synthesis: none;
+    line-height: 1.5pc;
+    text-align: left;
+    quotes: "“" "”" "‘" "’";
+}
+*:root::selection {
+    background: #e8e8e8;
+}
+
+/*  PAGE LAYOUT  */
+
+html {
+    margin: 0;
+    padding: 1.5pc;
+    background: #ffffff;
+    overflow: auto;
+}
+body {
+    margin: auto;
+    padding: 0 0 0 7.5pc;
+    max-width: 43.75pc;
+}
+body > nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: .75pc;
+    height: 1.5pc;
+    background: #ffffff;
+    text-align: center;
+    white-space: nowrap;
+    overflow: scroll;
+}
+@media print {
+    body > nav {
+        display: none;
+    }
+}
+body > nav a {
+    margin: 0 1.5pc;
+}
+
+/*  SECTIONING  */
+
+main, article, section, aside, nav, header, footer {
+    display: block;
+    clear: both;
+    margin: 1.5pc 0;
+    padding: 0;
+}
+article > article, article > section, article > nav,
+article > header > article, article > header > section, article > header > nav,
+article > footer > article, article > footer > section, article > footer > nav {
+    page-break-after: always;
+}
+@media screen {
+    article > article::before, article > article::after,
+    article > header::before, article > header::after,
+    article > footer::before, article > footer::after {
+        display: block;
+        margin: 1.5pc 0;
+        padding: 0;
+        color: #e8e8e8;
+        font-weight: 300;
+        text-align: center;
+        content: "- ＊ - ＊ - ＊ -"
+    }
+    article > article:first-child::before, article > article:last-child::after,
+    article > header:first-child::before, article > header:last-child::after,
+    article > footer:first-child::before, article > footer:last-child::after {
+        content: none;
+    }
+}
+aside {
+    font-weight: 100;
+}
+
+/*  BLOCK-LEVEL ELEMENTS  */
+
+blockquote, h1, h2, h3, p {
+    clear: both;
+}
+h1, h2, h3, p, li, dt {
+    white-space: pre-wrap;
+}
+blockquote {
+    margin: 1.5pc 1.25pc;
+    font-weight: 100;
+}
+h1 {
+    margin: 3pc 0 3pc -7.5pc;
+    color: #1c1c1c;
+    font-size: 3.75pc;
+    font-weight: 600;
+    line-height: 4.5pc;
+}
+h2 {
+    margin: 1.5pc 0 0 -2.5pc;
+    color: #1c1c1c;
+    font-size: inherit;
+    font-weight: 500;
+    line-height: inherit;
+}
+h2::after {
+    content: ":";
+}
+h3 {
+    margin: 1.5pc 0 0;
+    color: #1c1c1c;
+    font-size: inherit;
+    font-weight: 400;
+    line-height: inherit;
+    text-decoration: underline;
+}
+h3::after {
+    content: ":";
+}
+hr {
+    display: block;
+    position: relative;
+    margin: 0;
+    border: none;
+    padding: 0;
+    width: 100%;
+    height: 3pc;
+    color: inherit;
+    background: none;
+    overflow: hidden;
+}
+hr::after {
+    display: block;
+    position: absolute;
+    top: .75pc;
+    left: 0;
+    right: 0;
+    height: 1.5pc;
+    color: #7c7c7c;
+    text-align: center;
+    white-space: pre;
+    content: "＊  ＊  ＊"
+}
+iframe, img, figure {
+    display: block;
+    margin: 0;
+    border: none;
+    padding: 0;
+    max-width: 100%;
+}
+figure {
+    margin: 1.5pc auto;
+}
+h1 img, h2 img, h3 img, h4 img, h5 img, h6 img, p img, li img, dt img, dd img, code img, pre img, blockquote img {
+    display: inline-block;
+    margin: 0 .1em;
+    border: none;
+    padding: none;
+    max-height: .8em;
+    max-width: none;
+    width: auto;
+}
+p {
+    margin: 0;
+    padding: 0;
+}
+h3 + p::before, dd p:first-child::before {
+    content: "    ";
+}
+p + p::before {
+    color: #e8e8e8;
+    content: "  ¶ ";
+}
+blockquote p::before {
+    margin-left: -.625pc;
+    content: open-quote;
+}
+blockquote p:not(:last-of-type)::after {
+    content: no-close-quote;
+}
+blockquote p:last-of-type::after {
+    content: close-quote;
+}
+
+/*  LISTS  */
+
+ul, ol, dl {
+    margin: 0;
+    padding: 0 0 0 2.5pc;
+}
+ul:only-child, ol:only-child, dl:only-child,
+h1 + ul:last-child, h1 + ol:last-child, h1 + dl:last-child,
+h2 + ul:last-child, h2 + ol:last-child, h2 + dl:last-child {
+    padding: 0;
+}
+ul {
+    list-style-type: none;
+}
+ul li::before {
+    margin-left: -2.5pc;
+    font-size: inherit;
+    line-height: inherit;
+    content: " ＊ ";
+}
+nav ul li::before {
+    content: none;
+}
+li ul li {
+    content: " 〜 ";
+}
+li li ul li {
+    content: " － ";
+}
+li li li ul li {
+    content: ' ＂ ';
+}
+li li li li ul li{
+    content: " ＇ ";
+}
+ol {
+    list-style-type: decimal-leading-zero;
+}
+nav ol {
+    list-style-type: upper-roman;
+}
+li ol {
+    list-style-type: upper-roman;
+}
+nav li ol {
+    list-style-type: decimal-leading-zero;
+}
+li li ol {
+    list-style-type: lower-latin;
+}
+li li li ol {
+    list-style-type: lower-greek;
+}
+li li li li ol {
+    list-style-type: decimal;
+}
+dt {
+    display: inline;
+    float: left;
+    margin: 0;
+    padding: 0;
+    color: #1c1c1c;
+    font-weight: 400;
+}
+dt + dt::before {
+    content: ", "
+}
+dd {
+    margin: 0;
+    padding: 0;
+}
+dd::before {
+    display: inline;
+    white-space: pre-wrap;
+    content: " : ";
+}
+dd + dd::before {
+    content: "〃 : ";
+}
+dd:after {
+    display: block;
+    margin: 0;
+    padding: 0;
+    content: "";
+}
+
+/*  PHRASING ELEMENTS  */
+
+a[href] {
+    color: inherit;
+    font-weight: 400;
+    text-decoration: none;
+    outline: thin #e8e8e8 dashed;
+    outline-offset: 0;
+    transition: color .5s, background .5s, outline-color .5s, outline-offset .5s;
+}
+a[href]:hover {
+    color: #ffffff;
+    background: #1c1c1c;
+    outline-color: transparent;
+    outline-offset: .75pc;
+}
+nav a[href] {
+    outline: none;
+}
+b {
+    color: #1c1c1c;
+    font-weight: 300;
+}
+b::before {
+    content: "#";
+}
+cite {
+    font-style: inherit;
+}
+code {
+    color: #000000;
+    font-family: inherit;
+}
+code::before, code::after {
+    content: "'";
+}
+del {
+    color: #d4aa48;
+    text-decoration: line-through;
+}
+dfn {
+    font-style: inherit;
+    font-weight: 400;
+}
+em {
+    color: #1c1c1c;
+    font-style: normal;
+}
+em::before, em::after {
+    content: "〜";
+}
+i {
+    font-style: normal;
+}
+i::before, i::after {
+    content: "'";
+}
+i[lang]::before {
+    content: "«";
+}
+i[lang]::after {
+    content: "»";
+}
+ins {
+    color: #7c17f4;
+    text-decoration: underline;
+}
+mark {
+    background: #e8e8e8;
+}
+mark::selection {
+    background: #b3b3b3;
+}
+small {
+    font-size: inherit;
+    font-weight: 100;
+}
+s {
+    color: #977630;
+    text-decoration: line-through;
+}
+strong {
+    color: #8d192b;
+    font-weight: inherit;
+}
+sub, sup {
+    line-height: 0;
+}
+sup {
+    text-transform: uppercase;
+}
+u {
+    text-decoration: none;
+    text-transform: uppercase;
+}
