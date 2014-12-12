@@ -2,6 +2,16 @@ var current_scroll_target = 0;
 var current_scroll_velocity = 0;
 var current_scroll_hash = "#";
 var should_push_state = false;
+var Request = new XMLHttpRequest();
+
+function loadSnippets() {
+    Request.open("get", "/!DATA!/Snippets/snippets.html", true);
+    Request.responseType = "document";
+    Request.addEventListener("load", function(){
+        document.body.insertBefore(document.importNode(this.responseXML.getElementById("topnav"), true), document.body.firstElementChild);
+    }, false);
+    Request.send();
+}
 
 function scroll() {
     max_scroll = window.scrollMaxY;
@@ -42,6 +52,7 @@ function navHashFromLocation() {
 }
 
 function init() {
+    loadSnippets();
     var hashLinks = document.querySelectorAll('a[href^="#"]');
     for (var i = 0; i < hashLinks.length; i++) {
         hashLinks.item(i).addEventListener("click", navHashFromLink, false);
