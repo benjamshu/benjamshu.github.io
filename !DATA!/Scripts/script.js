@@ -1,3 +1,5 @@
+/* jslint asi:true, browser:true */
+
 var current_scroll_target = 0;
 var current_scroll_velocity = 0;
 var current_scroll_hash = "#";
@@ -14,8 +16,8 @@ function loadSnippets() {
 }
 
 function scroll() {
-    max_scroll = window.scrollMaxY;
-    if (max_scroll == undefined) max_scroll = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var max_scroll = window.scrollMaxY;
+    if (max_scroll === undefined) max_scroll = document.documentElement.scrollHeight - document.documentElement.clientHeight;
     var current_scroll_location = window.scrollY + window.innerHeight / 3;
     if (Math.abs(current_scroll_location - current_scroll_target) > 1 && max_scroll - window.scrollY > current_scroll_velocity && -1 * window.scrollY < current_scroll_velocity) {
         current_scroll_velocity = (current_scroll_velocity + (current_scroll_target - current_scroll_location) * 1023 / document.body.scrollHeight) / 2;
