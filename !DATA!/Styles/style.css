@@ -143,7 +143,7 @@ aside {
 blockquote, h1, h2, h3, p {
     clear: both;
 }
-h1, h2, h3, p, li, dt {
+h1, h2, h3, p, dt {
     white-space: pre-wrap;
 }
 blockquote {
