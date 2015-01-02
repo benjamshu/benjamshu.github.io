@@ -1,16 +1,7 @@
-/*
-NOTES:
-
-    colours:
-      - red : important
-      - yellow : outdated / deleted
-      - purple : new / updated / recent
-
-*/
-
 /*  AT-RULES  */
 
-@import url(../Fonts/fonts.css);
+@import url(fonts.css);
+@import url(colours.css);
 
 /*  GLOBAL RULES  */
 
@@ -35,37 +26,20 @@ NOTES:
 *:lang(en) {
     quotes: "“" "”" "‘" "’";
 }
-*:lang(*-fonipa)::before, *:lang(*-fonipa)::after {
-    content: "/";
-}
-
-/*  PRE-CSS4 SELECTION RULES  */
-*::selection {
-    background: #e8e8e8;
-}
-*::-moz-selection {
-    background: #e8e8e8;
-}
-mark::selection, mark *::selection {
-    background: #b3b3b3;
-}
-mark::-moz-selection, mark *::-moz-selection {
-    background: #b3b3b3;
+*:lang(*-fonipa) {
+    font-feature-settings: "liga", "clig", "dlig", "calt", "swsh", "cv04", "cv05", "ss06";
 }
 
 /*  ROOT STYLES  */
 *:root {
-    color: #484848;
     font-family: "EB Garamond 12pt", Garamond, serif;
     font-weight: normal;
     font-size: 18pt;
     font-synthesis: none;
+    font-feature-settings: "liga", "clig", "dlig", "calt", "swsh", "cv04", "cv05";
     line-height: 24pt;
     text-align: justify;
     quotes: "“" "”" "‘" "’";
-}
-*:root::selection {
-    background: #e8e8e8;
 }
 @media print {
     *:root {
@@ -79,13 +53,12 @@ mark::-moz-selection, mark *::-moz-selection {
 html {
     margin: 0;
     padding: 18pt;
-    background: #ffffff;
     overflow: auto;
 }
 body {
     margin: auto;
-    padding: 0 0 0 90pt;
-    max-width: 525pt;
+    padding: 0 72pt;
+    max-width: 432pt;
 }
 body > nav {
     position: fixed;
@@ -93,9 +66,8 @@ body > nav {
     left: 0;
     right: 0;
     margin: 0;
-    padding: 9pt;
-    height: 18pt;
-    background: #ffffff;
+    padding: 9pt 6pt;
+    height: 24pt;
     font-family: "EB Garamond 08pt", "EB Garamond 12pt", Garamond, serif;
     font-size: 12pt;
     text-align: center;
@@ -132,7 +104,6 @@ article > footer > article, article > footer > section, article > footer > nav {
         display: block;
         margin: 18pt 0;
         padding: 0;
-        color: #e8e8e8;
         text-align: center;
         content: "❦ ~ ❦ ~ ❦"
     }
@@ -156,28 +127,26 @@ h1, h2, h3, p, dt {
     white-space: pre-wrap;
 }
 blockquote {
-    margin: 18pt 15pt;
+    margin: 18pt 12pt;
 }
 h1 {
-    margin: 36pt 0 36pt -90pt;
-    color: #1c1c1c;
+    margin: 36pt 0 36pt -72pt;
     font-size: 54pt;
     font-weight: normal;
     line-height: 72pt;
 }
 h2 {
-    margin: 18pt 0 0 -30pt;
-    color: #1c1c1c;
-    font-size: inherit;
+    margin: 18pt 0 0;
+    font-size: 24pt;
     font-weight: normal;
-    line-height: inherit;
+    line-height: 36pt;
+    text-align: center;
 }
 h2::after {
     content: ":";
 }
 h3 {
     margin: 18pt 0 0;
-    color: #1c1c1c;
     font-size: inherit;
     line-height: inherit;
     text-decoration: underline;
@@ -204,7 +173,6 @@ hr::after {
     left: 0;
     right: 0;
     height: 18pt;
-    color: #7c7c7c;
     text-align: center;
     white-space: pre;
     content: "*  *  *"
@@ -233,14 +201,13 @@ p {
     margin: 0;
     padding: 0;
 }
-h3 + p, dd p, p + p {
-    text-indent: 30pt;
+h3 + p, p + p {
+    text-indent: 24pt;
 }
-h3 + p::before, dd p:first-child::before, p + p::before {
+p + p::before {
     position: absolute;
     top: 0;
-    left: 12pt;
-    color: #e8e8e8;
+    left: 6pt;
     text-indent: 0;
     content: "¶";
 }
@@ -258,7 +225,7 @@ blockquote p:last-of-type::after {
 
 ul, ol, dl {
     margin: 0;
-    padding: 0 0 0 36pt;
+    padding: 0 0 0 24pt;
 }
 ul:only-child, ol:only-child, dl:only-child,
 h1 + ul:last-child, h1 + ol:last-child, h1 + dl:last-child,
@@ -304,7 +271,7 @@ li li li ol {
 li li li li ol {
     list-style-type: decimal;
 }
-dd > dl {
+dl {
     padding: 0;
 }
 dt {
@@ -312,14 +279,13 @@ dt {
     float: left;
     margin: 0;
     padding: 0;
-    color: #1c1c1c;
     font-weight: normal;
 }
 dt + dt::before {
     content: ", "
 }
 dd {
-    margin: 0 0 0 36pt;
+    margin: 0 0 0 24pt;
     padding: 0;
 }
 dd::before {
@@ -342,22 +308,11 @@ dd:after {
 a[href] {
     color: inherit;
     font-weight: normal;
-    text-decoration: none;
-    outline: thin #e8e8e8 dashed;
-    outline-offset: 0;
-    transition: color .5s, background .5s, outline-color .5s, outline-offset .5s;
-}
-a[href]:hover {
-    color: #ffffff;
-    background: #1c1c1c;
-    outline-color: transparent;
-    outline-offset: 9pt;
-}
-nav a[href] {
-    outline: none;
+    text-decoration: underline;
+    -moz-text-decoration-style: dashed;
+    text-decoration-style: dashed;
 }
 b {
-    color: #1c1c1c;
     font-weight: normal;
 }
 b::before {
@@ -367,22 +322,19 @@ cite {
     font-style: inherit;
 }
 code {
-    color: #000000;
     font-family: inherit;
 }
 code::before, code::after {
     content: "'";
 }
 del {
-    color: #d4aa48;
     text-decoration: line-through;
 }
 dfn {
     font-style: inherit;
-    font-weight: 400;
+    font-weight: normal;
 }
 em {
-    color: #1c1c1c;
     font-style: normal;
 }
 em::before, em::after {
@@ -401,14 +353,7 @@ i[lang]::after {
     content: "»";
 }
 ins {
-    color: #7c17f4;
     text-decoration: underline;
-}
-mark {
-    background: #e8e8e8;
-}
-mark::selection {
-    background: #b3b3b3;
 }
 small {
     font-family: "EB Garamond 08pt", "EB Garamond 12pt", Garamond, serif;
@@ -416,11 +361,9 @@ small {
     font-weight: inherit;
 }
 s {
-    color: #977630;
     text-decoration: line-through;
 }
 strong {
-    color: #8d192b;
     font-weight: inherit;
 }
 sub, sup {
@@ -430,6 +373,5 @@ sup {
     text-transform: uppercase;
 }
 u {
-    color: #1c1c1c;
     text-decoration: none;
 }
