@@ -57,7 +57,7 @@ html {
 }
 body {
     margin: auto;
-    padding: 36pt 72pt;
+    padding: 36pt 72pt 0;
     max-width: 432pt;
 }
 body::before, body::after {
@@ -77,7 +77,7 @@ body::before {
     top: 36pt;
 }
 body::after {
-    bottom: 36pt;
+    bottom: 0;
 }
 #global-nav, #global-footer {
     position: fixed;
@@ -88,7 +88,6 @@ body::after {
     height: 24pt;
     font-family: "EB Garamond 08pt", "EB Garamond 12pt", Garamond, serif;
     font-size: 12pt;
-    text-align: center;
     white-space: nowrap;
     overflow: auto;
     z-index: 99
@@ -100,6 +99,7 @@ body::after {
 }
 #global-nav {
     top: 0;
+    text-align: center;
 }
 #global-nav a {
     margin: 0 18pt;
@@ -140,6 +140,9 @@ article > footer > article, article > footer > section, article > footer > nav {
 aside {
     font-family: "EB Garamond 08pt", "EB Garamond 12pt", Garamond, serif;
     font-size: 12pt;
+}
+footer {
+    text-align: right;
 }
 
 /*  BLOCK-LEVEL ELEMENTS  */
