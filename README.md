@@ -1,5 +1,5 @@
-#LEAF-ADVENTURE.GITHUB.IO
+#shoemabr.github.io
 
-Viewable at [leaf.faint.xyz](http://leaf.faint.xyz)\_
+Viewable at [brs.faint.xyz](http://brs.faint.xyz).
 
-This is, like, my personal website\_ Be nice\_
+This is, like, my personal website. Be nice.
