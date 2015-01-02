@@ -10,7 +10,7 @@ NOTES:
 
 /*  AT-RULES  */
 
-@import url(../Fonts/mplus-2m.css);
+@import url(../Fonts/fonts.css);
 
 /*  GLOBAL RULES  */
 
@@ -56,30 +56,36 @@ mark::-moz-selection, mark *::-moz-selection {
 /*  ROOT STYLES  */
 *:root {
     color: #484848;
-    font-family: "m+ 2m", monospace;
-    font-weight: 300;
-    font-size: 1.25pc;
+    font-family: "EB Garamond 12pt", Garamond, serif;
+    font-weight: normal;
+    font-size: 18pt;
     font-synthesis: none;
-    line-height: 1.5pc;
-    text-align: left;
+    line-height: 24pt;
+    text-align: justify;
     quotes: "“" "”" "‘" "’";
 }
 *:root::selection {
     background: #e8e8e8;
+}
+@media print {
+    *:root {
+        font-size: 12pt;
+        line-height: 16pt;
+    }
 }
 
 /*  PAGE LAYOUT  */
 
 html {
     margin: 0;
-    padding: 1.5pc;
+    padding: 18pt;
     background: #ffffff;
     overflow: auto;
 }
 body {
     margin: auto;
-    padding: 0 0 0 7.5pc;
-    max-width: 43.75pc;
+    padding: 0 0 0 90pt;
+    max-width: 525pt;
 }
 body > nav {
     position: fixed;
@@ -87,12 +93,15 @@ body > nav {
     left: 0;
     right: 0;
     margin: 0;
-    padding: .75pc;
-    height: 1.5pc;
+    padding: 9pt;
+    height: 18pt;
     background: #ffffff;
+    font-family: "EB Garamond 08pt", "EB Garamond 12pt", Garamond, serif;
+    font-size: 12pt;
     text-align: center;
     white-space: nowrap;
-    overflow: scroll;
+    overflow: auto;
+    z-index: 99
 }
 @media print {
     body > nav {
@@ -100,7 +109,7 @@ body > nav {
     }
 }
 body > nav a {
-    margin: 0 1.5pc;
+    margin: 0 18pt;
 }
 
 /*  SECTIONING  */
@@ -108,7 +117,7 @@ body > nav a {
 main, article, section, aside, nav, header, footer {
     display: block;
     clear: both;
-    margin: 1.5pc 0;
+    margin: 18pt 0;
     padding: 0;
 }
 article > article, article > section, article > nav,
@@ -121,12 +130,11 @@ article > footer > article, article > footer > section, article > footer > nav {
     article > header::before, article > header::after,
     article > footer::before, article > footer::after {
         display: block;
-        margin: 1.5pc 0;
+        margin: 18pt 0;
         padding: 0;
         color: #e8e8e8;
-        font-weight: 300;
         text-align: center;
-        content: "- ＊ - ＊ - ＊ -"
+        content: "❦ ~ ❦ ~ ❦"
     }
     article > article:first-child::before, article > article:last-child::after,
     article > header:first-child::before, article > header:last-child::after,
@@ -135,7 +143,8 @@ article > footer > article, article > footer > section, article > footer > nav {
     }
 }
 aside {
-    font-weight: 100;
+    font-family: "EB Garamond 08pt", "EB Garamond 12pt", Garamond, serif;
+    font-size: 12pt;
 }
 
 /*  BLOCK-LEVEL ELEMENTS  */
@@ -147,31 +156,29 @@ h1, h2, h3, p, dt {
     white-space: pre-wrap;
 }
 blockquote {
-    margin: 1.5pc 1.25pc;
-    font-weight: 100;
+    margin: 18pt 15pt;
 }
 h1 {
-    margin: 3pc 0 3pc -7.5pc;
+    margin: 36pt 0 36pt -90pt;
     color: #1c1c1c;
-    font-size: 3.75pc;
-    font-weight: 600;
-    line-height: 4.5pc;
+    font-size: 54pt;
+    font-weight: normal;
+    line-height: 72pt;
 }
 h2 {
-    margin: 1.5pc 0 0 -2.5pc;
+    margin: 18pt 0 0 -30pt;
     color: #1c1c1c;
     font-size: inherit;
-    font-weight: 500;
+    font-weight: normal;
     line-height: inherit;
 }
 h2::after {
     content: ":";
 }
 h3 {
-    margin: 1.5pc 0 0;
+    margin: 18pt 0 0;
     color: #1c1c1c;
     font-size: inherit;
-    font-weight: 400;
     line-height: inherit;
     text-decoration: underline;
 }
@@ -185,7 +192,7 @@ hr {
     border: none;
     padding: 0;
     width: 100%;
-    height: 3pc;
+    height: 36pt;
     color: inherit;
     background: none;
     overflow: hidden;
@@ -193,14 +200,14 @@ hr {
 hr::after {
     display: block;
     position: absolute;
-    top: .75pc;
+    top: 9pt;
     left: 0;
     right: 0;
-    height: 1.5pc;
+    height: 18pt;
     color: #7c7c7c;
     text-align: center;
     white-space: pre;
-    content: "＊  ＊  ＊"
+    content: "*  *  *"
 }
 iframe, img, figure {
     display: block;
@@ -210,30 +217,34 @@ iframe, img, figure {
     max-width: 100%;
 }
 figure {
-    margin: 1.5pc auto;
+    margin: 18pt auto;
 }
 h1 img, h2 img, h3 img, h4 img, h5 img, h6 img, p img, li img, dt img, dd img, code img, pre img, blockquote img {
     display: inline-block;
     margin: 0 .1em;
     border: none;
     padding: none;
-    max-height: .8em;
+    max-height: 12pt;
     max-width: none;
     width: auto;
 }
 p {
+    position: relative;
     margin: 0;
     padding: 0;
 }
-h3 + p::before, dd p:first-child::before {
-    content: "    ";
+h3 + p, dd p, p + p {
+    text-indent: 30pt;
 }
-p + p::before {
+h3 + p::before, dd p:first-child::before, p + p::before {
+    position: absolute;
+    top: 0;
+    left: 12pt;
     color: #e8e8e8;
-    content: "  ¶ ";
+    text-indent: 0;
+    content: "¶";
 }
 blockquote p::before {
-    margin-left: -.625pc;
     content: open-quote;
 }
 blockquote p:not(:last-of-type)::after {
@@ -247,7 +258,7 @@ blockquote p:last-of-type::after {
 
 ul, ol, dl {
     margin: 0;
-    padding: 0 0 0 2.5pc;
+    padding: 0 0 0 36pt;
 }
 ul:only-child, ol:only-child, dl:only-child,
 h1 + ul:last-child, h1 + ol:last-child, h1 + dl:last-child,
@@ -255,37 +266,31 @@ h2 + ul:last-child, h2 + ol:last-child, h2 + dl:last-child {
     padding: 0;
 }
 ul {
+    list-style-type: circle;
+}
+nav ul {
     list-style-type: none;
 }
-ul li::before {
-    margin-left: -2.5pc;
-    font-size: inherit;
-    line-height: inherit;
-    content: " ＊ ";
+li ul {
+    list-style-type: square;
 }
-nav ul li::before {
-    content: none;
+li li ul {
+    list-style-type: disc;
 }
-li ul li {
-    content: " 〜 ";
+li li li ul {
+    list-style-type: circle;
 }
-li li ul li {
-    content: " － ";
-}
-li li li ul li {
-    content: ' ＂ ';
-}
-li li li li ul li{
-    content: " ＇ ";
+li li li li ul {
+    list-style-type: square;
 }
 ol {
-    list-style-type: decimal-leading-zero;
+    list-style-type: upper-roman;
 }
 nav ol {
     list-style-type: upper-roman;
 }
 li ol {
-    list-style-type: upper-roman;
+    list-style-type: decimal-leading-zero;
 }
 nav li ol {
     list-style-type: decimal-leading-zero;
@@ -299,19 +304,22 @@ li li li ol {
 li li li li ol {
     list-style-type: decimal;
 }
+dd > dl {
+    padding: 0;
+}
 dt {
     display: inline;
     float: left;
     margin: 0;
     padding: 0;
     color: #1c1c1c;
-    font-weight: 400;
+    font-weight: normal;
 }
 dt + dt::before {
     content: ", "
 }
 dd {
-    margin: 0;
+    margin: 0 0 0 36pt;
     padding: 0;
 }
 dd::before {
@@ -333,7 +341,7 @@ dd:after {
 
 a[href] {
     color: inherit;
-    font-weight: 400;
+    font-weight: normal;
     text-decoration: none;
     outline: thin #e8e8e8 dashed;
     outline-offset: 0;
@@ -343,14 +351,14 @@ a[href]:hover {
     color: #ffffff;
     background: #1c1c1c;
     outline-color: transparent;
-    outline-offset: .75pc;
+    outline-offset: 9pt;
 }
 nav a[href] {
     outline: none;
 }
 b {
     color: #1c1c1c;
-    font-weight: 300;
+    font-weight: normal;
 }
 b::before {
     content: "#";
@@ -378,13 +386,13 @@ em {
     font-style: normal;
 }
 em::before, em::after {
-    content: "〜";
+    content: "~";
 }
 i {
-    font-style: normal;
+    font-style: italic;
 }
-i::before, i::after {
-    content: "'";
+i[lang] {
+    font-style: normal;
 }
 i[lang]::before {
     content: "«";
@@ -403,8 +411,9 @@ mark::selection {
     background: #b3b3b3;
 }
 small {
-    font-size: inherit;
-    font-weight: 100;
+    font-family: "EB Garamond 08pt", "EB Garamond 12pt", Garamond, serif;
+    font-size: 12pt;
+    font-weight: inherit;
 }
 s {
     color: #977630;
@@ -421,6 +430,6 @@ sup {
     text-transform: uppercase;
 }
 u {
+    color: #1c1c1c;
     text-decoration: none;
-    text-transform: uppercase;
 }
