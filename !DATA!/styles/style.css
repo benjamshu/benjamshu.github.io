@@ -159,6 +159,7 @@ h1 {
     font-size: 54pt;
     font-weight: normal;
     line-height: 72pt;
+    text-align: left;
 }
 h2 {
     margin: 18pt 0;
@@ -257,6 +258,7 @@ blockquote p:last-of-type::after {
 ul, ol, dl {
     margin: 0;
     padding: 0 0 0 24pt;
+    text-align: left;
 }
 ul:only-child, ol:only-child, dl:only-child,
 h1 + ul:last-child, h1 + ol:last-child, h1 + dl:last-child,
