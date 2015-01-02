@@ -150,9 +150,6 @@ footer {
 blockquote, h1, h2, h3, p {
     clear: both;
 }
-h1, h2, h3, p, dt {
-    white-space: pre-wrap;
-}
 blockquote {
     margin: 18pt 12pt;
 }
@@ -328,6 +325,7 @@ dd + dd::before {
 }
 dd:after {
     display: block;
+    clear: both;
     margin: 0;
     padding: 0;
     content: "";

@@ -44,7 +44,7 @@ body::after {
 #global-footer {
     color: #d0d3d9;
 }
-h2, h3, h4, h5, h6, hr, dt {
+h2, h3, h4, h5, h6, hr, dt, blockquote {
     color: #992412;
     background: none;
 }
@@ -65,6 +65,7 @@ h5 b, h5 code, h5 em, h5 u,
 h6 b, h6 code, h6 em, h6 u,
 dt b, dt code, dt em, dt u,
 dfn b, dfn code, dfn em, dfn u,
+blockquote h1, blockquote b, blockquote code, blockquote em, blockquote u,
 h1 dt, b dt, code dt, em dt, u dt,
 h1 dfn, b dfn, code dfn, em dfn, u dfn {
     color: #400f01;
