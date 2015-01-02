@@ -140,6 +140,7 @@ article > footer > article, article > footer > section, article > footer > nav {
 aside {
     font-family: "EB Garamond 08pt", "EB Garamond 12pt", Garamond, serif;
     font-size: 12pt;
+    line-height: 24pt;
 }
 footer {
     text-align: right;
@@ -387,6 +388,7 @@ small {
     font-family: "EB Garamond 08pt", "EB Garamond 12pt", Garamond, serif;
     font-size: 12pt;
     font-weight: inherit;
+    line-height: 16pt;
 }
 s {
     text-decoration: line-through;
