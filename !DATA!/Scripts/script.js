@@ -10,7 +10,8 @@ function loadSnippets() {
     Request.open("get", "/!DATA!/Snippets/snippets.html", true);
     Request.responseType = "document";
     Request.addEventListener("load", function(){
-        document.body.insertBefore(document.importNode(this.responseXML.getElementById("topnav"), true), document.body.firstElementChild);
+        document.body.insertBefore(document.importNode(this.responseXML.getElementById("global-nav"), true), document.body.firstElementChild);
+        document.body.appendChild(document.importNode(this.responseXML.getElementById("global-footer"), true));
     }, false);
     Request.send();
 }

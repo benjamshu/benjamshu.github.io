@@ -57,7 +57,7 @@ html {
 }
 body {
     margin: auto;
-    padding: 42pt 72pt 0 72pt;
+    padding: 36pt 72pt;
     max-width: 432pt;
 }
 body::before, body::after {
@@ -77,11 +77,10 @@ body::before {
     top: 36pt;
 }
 body::after {
-    bottom: 0;
+    bottom: 36pt;
 }
-body > nav {
+#global-nav, #global-footer {
     position: fixed;
-    top: 0;
     left: 0;
     right: 0;
     margin: 0;
@@ -95,12 +94,18 @@ body > nav {
     z-index: 99
 }
 @media print {
-    body > nav {
+    #global-nav, #global-footer {
         display: none;
     }
 }
-body > nav a {
+#global-nav {
+    top: 0;
+}
+#global-nav a {
     margin: 0 18pt;
+}
+#global-footer {
+    bottom: 0;
 }
 
 /*  SECTIONING  */
@@ -209,14 +214,17 @@ iframe, img, figure {
 figure {
     margin: 18pt auto;
 }
-h1 img, h2 img, h3 img, h4 img, h5 img, h6 img, p img, li img, dt img, dd img, code img, pre img, blockquote img {
+h1 img, h2 img, h3 img, h4 img, h5 img, h6 img, p img, li img, dt img, dd img, pre img, blockquote img,
+h1 svg, h2 svg, h3 svg, h4 svg, h5 svg, h6 svg, p svg, li svg, dt svg, dd svg, pre svg, blockquote svg {
     display: inline-block;
-    margin: 0 .1em;
+    margin: 0;
     border: none;
-    padding: none;
-    max-height: 12pt;
+    padding: 0;
+    max-height: 1em;
     max-width: none;
     width: auto;
+    color: inherit;
+    vertical-align: text-bottom;
 }
 p {
     position: relative;

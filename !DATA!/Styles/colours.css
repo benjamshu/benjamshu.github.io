@@ -2,7 +2,7 @@
     *:root {
         color: black;
     }
-    html, body > nav {
+    html, #global-nav, #global-footer {
         background: white;
     }
 }
@@ -13,7 +13,7 @@
         color: #d97366;
     }
 }
-h1 *:not(html), h2 *:not(html), h3 *:not(html), h4 *:not(html), h5 *:not(html), h6 *:not(html), dt *:not(html), del *:not(html), dfn *:not(html), ins *:not(html), s *:not(html), strong *:not(html), body > nav *:not(html), hr::after, a[href] {
+h1 *:not(html), h2 *:not(html), h3 *:not(html), h4 *:not(html), h5 *:not(html), h6 *:not(html), dt *:not(html), del *:not(html), dfn *:not(html), ins *:not(html), s *:not(html), strong *:not(html), #global-nav *:not(html), #global-footer *:not(html), hr::after, a[href] {
     color: inherit;
 }
 *:root {
@@ -37,9 +37,13 @@ body::before {
 body::after {
     background: linear-gradient(to top, rgb(237, 239, 242), rgba(237, 239, 242, 0));
 }
-body > nav {
+#global-nav {
     color: #edeff2;
     background: #00071c;
+}
+#global-footer {
+    color: #d0d3d9;
+    background: #edeff2;
 }
 h2, h3, h4, h5, h6, hr, dt {
     color: #992412;
