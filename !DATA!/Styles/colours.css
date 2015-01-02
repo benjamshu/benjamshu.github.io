@@ -1,42 +1,11 @@
-/*  GLOBAL STYLES  */
-h1 *:not(html), h2 *:not(html), h3 *:not(html), h4 *:not(html), h5 *:not(html), h6 *:not(html), dt *:not(html), del *:not(html), dfn *:not(html), ins *:not(html), s *:not(html), strong *:not(html) {
-    color: inherit;
-}
-
-/*  PRE-CSS4 SELECTION RULES  */
-*::selection {
-    background: #d0d3d9;
-}
-*::-moz-selection {
-    background: #d0d3d9;
-}
-
-/*  ROOT STYLES  */
-*:root {
-    color: #787a80;
-}
-*:root::selection {
-    background: #d0d3d9;
-}
 @media print {
     *:root {
         color: black;
     }
-}
-
-/*  PAGE LAYOUT  */
-
-html, body > nav {
-    background: #edeff2;
-}
-@media print {
     html, body > nav {
         background: white;
     }
 }
-
-/*  SECTIONING  */
-
 @media screen {
     article > article::before, article > article::after,
     article > header::before, article > header::after,
@@ -44,39 +13,48 @@ html, body > nav {
         color: #d97366;
     }
 }
-
-/*  BLOCK-LEVEL ELEMENTS  */
-
-h1, h2, h3, h4, h5, h6, hr {
+h1 *:not(html), h2 *:not(html), h3 *:not(html), h4 *:not(html), h5 *:not(html), h6 *:not(html), dt *:not(html), del *:not(html), dfn *:not(html), ins *:not(html), s *:not(html), strong *:not(html), body > nav *:not(html), hr::after, a[href] {
+    color: inherit;
+}
+*:root {
+    color: #787a80;
+}
+*:root::selection {
+    background: #d0d3d9;
+}
+*::selection {
+    background: #d0d3d9;
+}
+*::-moz-selection {
+    background: #d0d3d9;
+}
+html {
+    background: #edeff2;
+}
+body::before {
+    background: linear-gradient(to bottom, rgb(237, 239, 242), rgba(237, 239, 242, 0));
+}
+body::after {
+    background: linear-gradient(to top, rgb(237, 239, 242), rgba(237, 239, 242, 0));
+}
+body > nav {
+    color: #edeff2;
+    background: #00071c;
+}
+h2, h3, h4, h5, h6, hr, dt {
     color: #992412;
     background: none;
-}
-hr::after {
-    color: inherit;
 }
 p::before, p::after {
     color: #d97366;
 }
-
-/*  LISTS  */
-
-dt {
-    color: #992412;
-}
-
-/*  PHRASING ELEMENTS  */
-
-a[href] {
-    color: inherit;
-}
-b, code, em, u {
+h1, b, code, em, u {
     color: #00071c;
 }
 del b, del code, del em, del u,
-b del, code del, em del, u del {
+h1 del, b del, code del, em del, u del {
     color: #402e01;
 }
-h1 b, h1 code, h1 em, h1 u,
 h2 b, h2 code, h2 em, h2 u,
 h3 b, h3 code, h3 em, h3 u,
 h4 b, h4 code, h4 em, h4 u,
@@ -84,26 +62,20 @@ h5 b, h5 code, h5 em, h5 u,
 h6 b, h6 code, h6 em, h6 u,
 dt b, dt code, dt em, dt u,
 dfn b, dfn code, dfn em, dfn u,
-b h1, code h1, em h1, u h1,
-b h2, code h2, em h2, u h2,
-b h3, code h3, em h3, u h3,
-b h4, code h4, em h4, u h4,
-b h5, code h5, em h5, u h5,
-b h6, code h6, em h6, u h6,
-b dt, code dt, em dt, u dt,
-b dfn, code dfn, em dfn, u dfn {
+h1 dt, b dt, code dt, em dt, u dt,
+h1 dfn, b dfn, code dfn, em dfn, u dfn {
     color: #400f01;
 }
 ins b, ins code, ins em, ins u,
-b ins, code ins, em ins, u ins {
+h1 ins, b ins, code ins, em ins, u ins {
     color: #010f40;
 }
 s b, s code, s em, s u,
-b s, code s, em s, u s {
+h1 s, b s, code s, em s, u s {
     color: #787a80;
 }
 strong b, strong code, strong em, strong u,
-b strong, code strong, em strong, u strong {
+h1 strong, b strong, code strong, em strong, u strong {
     color: #074001;
 }
 del {

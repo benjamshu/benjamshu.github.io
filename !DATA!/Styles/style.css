@@ -52,13 +52,32 @@
 
 html {
     margin: 0;
-    padding: 18pt;
+    padding: 36pt;
     overflow: auto;
 }
 body {
     margin: auto;
-    padding: 0 72pt;
+    padding: 42pt 72pt 0 72pt;
     max-width: 432pt;
+}
+body::before, body::after {
+    display: block;
+    position: fixed;
+    right: 0;
+    left: 0;
+    height: 36pt;
+    content: "";
+}
+@media print {
+    body::before, body::after {
+        content: none;
+    }
+}
+body::before {
+    top: 36pt;
+}
+body::after {
+    bottom: 0;
 }
 body > nav {
     position: fixed;
@@ -66,7 +85,7 @@ body > nav {
     left: 0;
     right: 0;
     margin: 0;
-    padding: 9pt 6pt;
+    padding: 6pt;
     height: 24pt;
     font-family: "EB Garamond 08pt", "EB Garamond 12pt", Garamond, serif;
     font-size: 12pt;
@@ -136,14 +155,17 @@ h1 {
     line-height: 72pt;
 }
 h2 {
-    margin: 18pt 0 0;
+    margin: 18pt 0;
     font-size: 24pt;
     font-weight: normal;
     line-height: 36pt;
     text-align: center;
 }
+h2::before {
+    content: "☙ ";
+}
 h2::after {
-    content: ":";
+    content: " ❧";
 }
 h3 {
     margin: 18pt 0 0;
@@ -270,9 +292,6 @@ li li li ol {
 }
 li li li li ol {
     list-style-type: decimal;
-}
-dl {
-    padding: 0;
 }
 dt {
     display: inline;
