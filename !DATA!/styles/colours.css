@@ -1,18 +1,3 @@
-@media print {
-    *:root {
-        color: black;
-    }
-    html, #global-nav, #global-footer {
-        background: white;
-    }
-}
-@media screen {
-    article > article::before, article > article::after,
-    article > header::before, article > header::after,
-    article > footer::before, article > footer::after {
-        color: #d97366;
-    }
-}
 h1 *:not(html), h2 *:not(html), h3 *:not(html), h4 *:not(html), h5 *:not(html), h6 *:not(html), dt *:not(html), del *:not(html), dfn *:not(html), ins *:not(html), s *:not(html), strong *:not(html), #global-nav *:not(html), #global-footer *:not(html), hr::after, a[href] {
     color: inherit;
 }
@@ -99,4 +84,19 @@ s {
 }
 strong {
     color: #2d9912;
+}
+@media print {
+    *:root {
+        color: black;
+    }
+    html, #global-nav, #global-footer {
+        background: white;
+    }
+}
+@media screen {
+    article > article::before, article > article::after,
+    article > header::before, article > header::after,
+    article > footer::before, article > footer::after {
+        color: #d97366;
+    }
 }
