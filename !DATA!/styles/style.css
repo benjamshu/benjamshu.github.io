@@ -75,9 +75,11 @@ body::before, body::after {
 }
 body::before {
     top: 36pt;
+    z-index: 98;
 }
 body::after {
     bottom: 0;
+    z-index: 98;
 }
 #global-nav, #global-footer {
     position: fixed;
