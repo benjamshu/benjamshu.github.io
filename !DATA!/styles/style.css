@@ -337,7 +337,6 @@ dd:after {
 /*  PHRASING ELEMENTS  */
 
 a[href] {
-    color: inherit;
     font-weight: normal;
     text-decoration: underline;
     -moz-text-decoration-style: dashed;
