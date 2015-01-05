@@ -16,6 +16,38 @@ function loadSnippets() {
     Request.send();
 }
 
+function displayAltLinks() {
+    var i;
+    var j;
+    var alts;
+    var altnav;
+    var alt;
+    if (!document.getElementById("alts")) return;
+    alts = document.getElementById("alts").text.split(/\s*\n\s*/g);
+    console.log(alts);
+    altnav = document.createElement("NAV");
+    altnav.id = "alt-nav";
+    alt = document.createElement("A");
+    alt.id = "alt-current";
+    alt.href = document.location.href;
+    alt.hreflang = document.documentElement.lang;
+    alt.textContent = document.documentElement.lang.toUpperCase();
+    altnav.appendChild(alt);
+    for (i = 0; i < alts.length; i++) {
+        if (alts[i].search(/\s*:\s*/) === -1) continue;
+        alt = document.createElement("A");
+        alt.href = alts[i].split(/\s*:\s*/g)[1];
+        alt.hreflang = alts[i].split(/\s*:\s*/g)[0];
+        alt.textContent = alts[i].split(/\s*:\s*/g)[0].toUpperCase();
+        j = altnav.firstElementChild;
+        while (j && j.textContent < alt.textContent) {
+            j = j.nextElementSibling;
+        }
+        altnav.insertBefore(alt, j);
+    }
+    document.body.insertBefore(altnav, document.body.firstElementChild);
+}
+
 function scroll() {
     var max_scroll = window.scrollMaxY;
     if (max_scroll === undefined) max_scroll = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -54,8 +86,23 @@ function navHashFromLocation() {
     }
 }
 
+function checkLinks() {
+    var links = document.getElementsByTagName("A");
+    var i;
+    var append;
+    for (i = 0; i < links.length; i++) {
+        if (links.item(i).hreflang && links.item(i).hreflang != document.documentElement.lang) {
+            append = document.createElement("small");
+            append.textContent = " [" + links.item(i).hreflang + "]";
+            links.item(i).appendChild(append);
+        }
+    }
+}
+
 function init() {
     loadSnippets();
+    checkLinks();
+    displayAltLinks();
     var hashLinks = document.querySelectorAll('a[href^="#"]');
     for (var i = 0; i < hashLinks.length; i++) {
         hashLinks.item(i).addEventListener("click", navHashFromLink, false);

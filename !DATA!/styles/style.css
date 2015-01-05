@@ -106,6 +106,26 @@ body::after {
 #global-nav a {
     margin: 0 18pt;
 }
+#alt-nav {
+    position: fixed;
+    right: 0;
+    top: 36pt;
+    margin: 3pt 4.5pt;
+    padding: 0;
+    font-family: "EB Garamond 08pt", "EB Garamond 12pt", Garamond, serif;
+    font-size: 12pt;
+    z-index: 99;
+}
+#alt-nav a[href] {
+    margin: 0 4.5pt;
+    transition: opacity .5s;
+}
+#alt-nav a[href] {
+    opacity: .5;
+}
+#alt-nav:hover a[href]:hover, #alt-nav:not(:hover) a[href]#alt-current {
+    opacity: 1;
+}
 #global-footer {
     bottom: 0;
     text-align: right;
