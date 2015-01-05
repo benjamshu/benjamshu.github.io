@@ -57,16 +57,17 @@ html {
 }
 body {
     margin: auto;
-    padding: 36pt 72pt 0;
+    padding: 0 72pt;
     max-width: 432pt;
 }
-body::before, body::after {
+body::before, body::after, #global-nav::after {
     display: block;
     position: fixed;
     right: 0;
     left: 0;
     height: 36pt;
     content: "";
+    z-index: 98;
 }
 @media print {
     body::before, body::after {
@@ -74,12 +75,10 @@ body::before, body::after {
     }
 }
 body::before {
-    top: 36pt;
-    z-index: 98;
+    top: 0;
 }
 body::after {
     bottom: 0;
-    z-index: 98;
 }
 #global-nav, #global-footer {
     position: fixed;
@@ -102,6 +101,9 @@ body::after {
 #global-nav {
     top: 0;
     text-align: center;
+}
+#global-nav::after {
+    top: 36pt;
 }
 #global-nav a {
     margin: 0 18pt;
@@ -136,8 +138,14 @@ body::after {
 main, article, section, aside, nav, header, footer {
     display: block;
     clear: both;
-    margin: 18pt 0;
+    margin: 0;
     padding: 0;
+}
+#global-nav ~ main {
+    padding-top: 36pt;
+}
+article:not(:only-child), section:not(:only-child), aside:not(:only-child), nav:not(:only-child), header:not(:only-child), footer:not(:only-child) {
+    margin: 18pt 0;
 }
 article > article, article > section, article > nav,
 article > header > article, article > header > section, article > header > nav,

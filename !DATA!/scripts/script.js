@@ -10,7 +10,19 @@ function loadSnippets() {
     Request.open("get", "/!DATA!/snippets/snippets.html", true);
     Request.responseType = "document";
     Request.addEventListener("load", function(){
-        document.body.insertBefore(document.importNode(this.responseXML.getElementById("global-nav"), true), document.body.firstElementChild);
+        var snippet;
+        var clone;
+        var i;
+        snippet = this.responseXML.getElementById("global-nav");
+        clone = document.createElement("NAV");
+        clone.id = "global-nav";
+        for (i = 0; i < snippet.childElementCount; i++) {
+            if (snippet.children.item(i).lang == document.documentElement.lang) {
+                clone.appendChild(document.importNode(snippet.children.item(i), true));
+                break;
+            }
+        }
+        if (clone.childElementCount !== 0) document.body.insertBefore(clone, document.body.firstElementChild);
         document.body.appendChild(document.importNode(this.responseXML.getElementById("global-footer"), true));
     }, false);
     Request.send();
@@ -24,7 +36,6 @@ function displayAltLinks() {
     var alt;
     if (!document.getElementById("alts")) return;
     alts = document.getElementById("alts").text.split(/\s*\n\s*/g);
-    console.log(alts);
     altnav = document.createElement("NAV");
     altnav.id = "alt-nav";
     alt = document.createElement("A");
@@ -87,6 +98,7 @@ function navHashFromLocation() {
 }
 
 function checkLinks() {
+    if (!document.documentElement.lang) return;
     var links = document.getElementsByTagName("A");
     var i;
     var append;

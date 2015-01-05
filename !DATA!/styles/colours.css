@@ -16,7 +16,7 @@ h1 *:not(html), h2 *:not(html), h3 *:not(html), h4 *:not(html), h5 *:not(html), 
 html {
     background: #e5e8ed;
 }
-body::before {
+body::before, #global-nav::after {
     background: linear-gradient(to bottom, rgb(229, 232, 237), rgba(229, 232, 237, 0));
 }
 body::after {
@@ -27,7 +27,7 @@ body::after {
     background: #1c2027;
 }
 #global-footer {
-    color: #d6dae0;
+    color: #a6acb1;
 }
 h2, h3, h4, h5, h6, hr, dt, dfn, blockquote {
     color: #8a3756;
