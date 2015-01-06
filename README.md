@@ -1,5 +1,5 @@
-#shoemabr.github.io
+#literallybenjam.github.io
 
-Viewable at [brs.faint.xyz](http://brs.faint.xyz).
+Viewable at [benjam.faint.xyz](http://benjam.faint.xyz).
 
 This is, like, my personal website. Be nice.
