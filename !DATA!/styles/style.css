@@ -27,7 +27,7 @@
     quotes: "“" "”" "‘" "’";
 }
 *:lang(*-fonipa) {
-    font-feature-settings: "liga", "clig", "dlig", "calt", "swsh", "cv04", "cv05", "ss06";
+    font-feature-settings: "liga", "clig", "dlig", "calt", "cv04", "cv05", "ss06";
 }
 
 /*  ROOT STYLES  */
@@ -36,7 +36,7 @@
     font-weight: normal;
     font-size: 18pt;
     font-synthesis: none;
-    font-feature-settings: "liga", "clig", "dlig", "calt", "swsh", "cv04", "cv05";
+    font-feature-settings: "liga", "clig", "dlig", "calt", "cv04", "cv05";
     line-height: 24pt;
     text-align: justify;
     quotes: "“" "”" "‘" "’";
