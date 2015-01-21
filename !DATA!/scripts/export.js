@@ -16,13 +16,14 @@ function exportNode(node) {
             switch (node.tagName) {
 
                 case "A":
-                    s += " [" + node.href + "]";
+                    if (node.classList.contains("export-link")) s = "";
+                    else s += " [" + node.href + "]";
                     break;
 
                 case "ARTICLE":
                 case "FOOTER":
                 case "HEADER":
-                    if (node.nextSibling) s += "\n❦ ~ ❦ ~ ❦\n";
+                    if (node.nextElementSibling) s += "\n❦ ~ ❦ ~ ❦\n";
                     break;
 
                 case "ASIDE":
