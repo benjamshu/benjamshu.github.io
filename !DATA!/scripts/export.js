@@ -20,12 +20,6 @@ function exportNode(node) {
                     else s += " [" + node.href + "]";
                     break;
 
-                case "ARTICLE":
-                case "FOOTER":
-                case "HEADER":
-                    if (node.nextElementSibling) s += "\n❦ ~ ❦ ~ ❦\n";
-                    break;
-
                 case "ASIDE":
                     s = "\n[[" + s + "]]\n";
                     break;
@@ -59,6 +53,10 @@ function exportNode(node) {
                     s = "~" + s.trim() + "~";
                     break;
 
+                case "FOOTER":
+                    if (node.previousElementSibling) s = "\n❦ ~ ❦ ~ ❦\n" + s;
+                    break;
+
                 case "H1":
                     s = "\n" + s.toLocaleUpperCase() + "\n";
                     break;
@@ -81,6 +79,10 @@ function exportNode(node) {
 
                 case "H6":
                     s = "\n>>>> " + s + ":\n";
+                    break;
+
+                case "HEADER":
+                    if (node.nextElementSibling) s += "\n❦ ~ ❦ ~ ❦\n";
                     break;
 
                 case "HR":
