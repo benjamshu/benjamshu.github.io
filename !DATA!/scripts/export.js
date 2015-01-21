@@ -90,7 +90,7 @@ function exportNode(node) {
                     break;
 
                 case "INS":
-                    s = s.replace(/\s+/g, "_");
+                    s = "_" + s.replace(/\s+/g, "_") + "_";
                     break;
 
                 case "LI":
@@ -112,7 +112,7 @@ function exportNode(node) {
                     break;
 
                 case "S":
-                    s = s.replace(/\s+/, "-");
+                    s = "-" + s.replace(/\s+/, "-") + "-";
                     break;
 
                 case "STRONG":
