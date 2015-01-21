@@ -29,7 +29,7 @@ function exportNode(node) {
                     break;
 
                 case "BLOCKQUOTE":
-                    s = ("\n" + s.replace(/\n+$/, "")).replace(/\n+/g, "\n").replace(/\n/g, "\n > “") + "”\n";
+                    s = ("\n" + s.replace(/\s+$/, "").replace(/^\s+/, "")).replace(/\s*\n\s*/g, "\n").replace(/\n/g, "\n > “") + "”\n";
                     break;
 
                 case "CODE":
@@ -137,7 +137,7 @@ function exportNode(node) {
             break;
 
     }
-    return s.replace(/ +/g, " ").replace(/ ?\n ?/g, "\n").replace(/\n+/g, "\n");
+    return s.replace(/ +/g, " ").replace(/ *\n */g, "\n").replace(/\n+/g, "\n");
 }
 
 function exportInit() {
