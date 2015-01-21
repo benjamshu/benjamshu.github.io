@@ -108,7 +108,7 @@ function exportNode(node) {
                     break;
 
                 case "Q":
-                    s = "“" + s + "”":
+                    s = "“" + s + "”";
                     break;
 
                 case "SMALL":
