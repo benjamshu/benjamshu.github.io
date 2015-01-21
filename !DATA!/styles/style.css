@@ -160,7 +160,7 @@ article > footer > article, article > footer > section, article > footer > nav {
         margin: 18pt 0;
         padding: 0;
         text-align: center;
-        content: "❦ ~ ❦ ~ ❦"
+        content: "❦ ~ ❦ ~ ❦";
     }
     article > article:first-child::before, article > article:last-child::after,
     article > header:first-child::before, article > header:last-child::after,
@@ -172,6 +172,14 @@ aside {
     font-family: "EB Garamond 08pt", "EB Garamond 12pt", Garamond, serif;
     font-size: 12pt;
     line-height: 24pt;
+}
+blockquote > footer:last-child {
+    font-size: 12pt;
+    line-height: 16pt;
+    text-align: right;
+}
+blockquote > footer:last-child::before {
+    content: "– ";
 }
 
 /*  BLOCK-LEVEL ELEMENTS  */
@@ -288,7 +296,7 @@ ul, ol, dl {
     padding: 0 0 0 24pt;
     text-align: left;
 }
-ul:only-child, ol:only-child, dl:only-child,
+:not(li) > ul:only-child, :not(li) > ol:only-child, :not(li) > dl:only-child,
 h1 + ul:last-child, h1 + ol:last-child, h1 + dl:last-child,
 h2 + ul:last-child, h2 + ol:last-child, h2 + dl:last-child {
     padding: 0;
