@@ -107,6 +107,10 @@ function exportNode(node) {
                     s = "\n¶ " + s + "\n";
                     break;
 
+                case "Q":
+                    s = "“" + s + "”":
+                    break;
+
                 case "SMALL":
                     s = "((" + s.trim() + "))";
                     break;
