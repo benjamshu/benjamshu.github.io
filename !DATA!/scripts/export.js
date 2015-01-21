@@ -10,14 +10,14 @@ function exportNode(node) {
             break;
 
         case Node.ELEMENT_NODE:
+            if (node.classList.contains("export-link") || node.classList.contains("export-hidden")) break;
             for (i = 0; i < node.childNodes.length; i++) {
                 s += exportNode(node.childNodes.item(i))
             }
             switch (node.tagName) {
 
                 case "A":
-                    if (node.classList.contains("export-link")) s = "";
-                    else s += " [" + node.href + "]";
+                    s += " [" + node.href + "]";
                     break;
 
                 case "ASIDE":
@@ -95,10 +95,10 @@ function exportNode(node) {
 
                 case "LI":
                     if (node.parentElement.tagName === "OL") {
-                        for (i = 0; i < node.parentElement.children; i++) {
+                        for (i = 0; i < node.parentElement.children.length; i++) {
                             if (node.parentElement.children.item(i) === node) break;
                         }
-                        s = "\n" + i + ". " + s + "\n";
+                        s = "\n" + (i + 1) + ". " + s + "\n";
                     }
                     else s = "\n· " + s + "\n";
                     break;
