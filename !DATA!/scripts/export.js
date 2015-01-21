@@ -134,13 +134,15 @@ function exportNode(node) {
 }
 
 function exportInit() {
-    var exportA;
-    var exportI;
-    for (exportI = 0; exportI < document.getElementsByClassName("export").length; exportI++) {
-        exportA = document.createElement("A");
-        exportA.textContent = "Download";
-        exportA.href = "data:text/plain;charset=utf-8," + encodeURIComponent(exportNode(document.getElementsByClassName("export").item(exportI)).trim());
-        document.getElementsByClassName("export").item(exportI).appendChild(document.createElement("FOOTER").appendChild(exportA));
+    var a;
+    var i;
+    var j;
+    var s;
+    for (i = 0; i < document.getElementsByClassName("export").length; i++) {
+        s = "data:text/plain;charset=utf-8," + encodeURIComponent(exportNode(document.getElementsByClassName("export").item(i)).trim());
+       for (j = 0; j < document.getElementById("export").querySelectorAll("a.export-link").length; j++) {
+           document.getElementById("export").querySelectorAll("a.export-link").item(j).href = s;
+       }
     }
 }
 
