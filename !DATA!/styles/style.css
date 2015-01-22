@@ -70,6 +70,10 @@ body::before, body::after, #global-nav::after {
     z-index: 98;
 }
 @media print {
+    body {
+        padding: 0 36pt;
+        max-width: none;
+    }
     body::before, body::after {
         content: none;
     }
@@ -92,11 +96,6 @@ body::after {
     white-space: nowrap;
     overflow: auto;
     z-index: 99;
-}
-@media print {
-    #global-nav, #global-footer {
-        display: none;
-    }
 }
 #global-nav {
     top: 0;
@@ -131,6 +130,11 @@ body::after {
 #global-footer {
     bottom: 0;
     text-align: right;
+}
+@media print {
+    #global-nav, #alt-nav, #global-footer {
+        display: none;
+    }
 }
 
 /*  SECTIONING  */
@@ -377,6 +381,11 @@ a[href] {
     text-decoration: underline;
     -moz-text-decoration-style: dashed;
     text-decoration-style: dashed;
+}
+@media print {
+    a[href] {
+        text-decoration: none;
+    }
 }
 b {
     font-weight: normal;
