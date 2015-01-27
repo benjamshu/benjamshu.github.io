@@ -151,31 +151,33 @@ main, article, section, aside, nav, header, footer {
 article:not(:only-child), section:not(:only-child), aside:not(:only-child), nav:not(:only-child), header:not(:only-child), footer:not(:only-child) {
     margin: 18pt 0;
 }
-article > article, article > section, article > nav,
-article > header > article, article > header > section, article > header > nav,
-article > footer > article, article > footer > section, article > footer > nav {
+main > header, main > section, main > nav,
+main > article:only-child > header, main > article:only-child > section, main > article:only-child > nav {
     page-break-after: always;
 }
 @media screen {
-    article > article::before, article > article::after,
-    article > header::before, article > header::after,
-    article > footer::before, article > footer::after {
+    main > header::after, main > footer::before,
+    main > article:only-child > header::after, main > article:only-child > footer::before {
         display: block;
         margin: 18pt 0;
         padding: 0;
         text-align: center;
         content: "❦ ~ ❦ ~ ❦";
     }
-    article > article:first-child::before, article > article:last-child::after,
-    article > header:first-child::before, article > header:last-child::after,
-    article > footer:first-child::before, article > footer:last-child::after {
-        content: none;
-    }
 }
 aside {
     font-family: "EB Garamond 08pt", "EB Garamond 12pt", Garamond, serif;
     font-size: 12pt;
     line-height: 24pt;
+}
+aside:not(:first-child)::before, aside:not(:last-child)::after {
+    display: block;
+    margin: 17.5pt auto;
+    border: .5pt currentColor solid;
+    padding: 0;
+    height: 0;
+    width: 80%;
+    content: "";
 }
 blockquote > footer:last-child {
     font-size: 12pt;

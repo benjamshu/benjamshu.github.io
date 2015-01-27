@@ -94,9 +94,8 @@ a[href] {
     }
 }
 @media screen {
-    article > article::before, article > article::after,
-    article > header::before, article > header::after,
-    article > footer::before, article > footer::after {
+    main > header::after, main > footer::before,
+    main > article:only-child > header::after, main > article:only-child > footer::before {
         color: #e98aa4;
     }
 }
