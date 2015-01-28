@@ -155,16 +155,6 @@ main > header, main > section, main > nav,
 main > article:only-child > header, main > article:only-child > section, main > article:only-child > nav {
     page-break-after: always;
 }
-@media screen {
-    main > header::after, main > footer::before,
-    main > article:only-child > header::after, main > article:only-child > footer::before {
-        display: block;
-        margin: 18pt 0;
-        padding: 0;
-        text-align: center;
-        content: "❦ ~ ❦ ~ ❦";
-    }
-}
 aside {
     font-family: "EB Garamond 08pt", "EB Garamond 12pt", Garamond, serif;
     font-size: 12pt;
@@ -246,7 +236,7 @@ hr::after {
     height: 18pt;
     text-align: center;
     white-space: pre;
-    content: "*  *  *"
+    content: "❦  ~  ❦  ~  ❦"
 }
 iframe, img, figure {
     display: block;
@@ -275,6 +265,9 @@ p {
     margin: 0;
     padding: 0;
 }
+header h1 + p {
+    margin: -36pt 0 36pt;
+}
 h3 + p, p + p {
     text-indent: 24pt;
 }
@@ -285,7 +278,12 @@ p + p::before {
     text-indent: 0;
     content: "¶";
 }
-blockquote p::before {
+blockquote p::before, blockquote p + p::before {
+    position: absolute;
+    top: 0;
+    left: auto;
+    right: 100%;
+    text-indent: 0;
     content: open-quote;
 }
 blockquote p:not(:last-of-type)::after {

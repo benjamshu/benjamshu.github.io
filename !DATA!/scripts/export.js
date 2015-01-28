@@ -53,10 +53,6 @@ function exportNode(node) {
                     s = "~" + s.trim() + "~";
                     break;
 
-                case "FOOTER":
-                    if (node.previousElementSibling) s = "\n❦ ~ ❦ ~ ❦\n" + s;
-                    break;
-
                 case "H1":
                     s = "\n" + s.toLocaleUpperCase() + "\n";
                     break;
@@ -81,12 +77,8 @@ function exportNode(node) {
                     s = "\n>>>> " + s + ":\n";
                     break;
 
-                case "HEADER":
-                    if (node.nextElementSibling) s += "\n❦ ~ ❦ ~ ❦\n";
-                    break;
-
                 case "HR":
-                    s = "\n * * * \n";
+                    s = "\n❦  ~  ❦  ~  ❦\n";
                     break;
 
                 case "INS":
@@ -137,7 +129,7 @@ function exportNode(node) {
             break;
 
     }
-    return s.replace(/ +/g, " ").replace(/ *\n */g, "\n").replace(/\n+/g, "\n");
+    return s.replace(/ +/g, " ").replace(/ *\n */g, "\n").replace(/\n+/g, "\n").replace(/\n☙/g, "\n\n☙");
 }
 
 function exportInit() {

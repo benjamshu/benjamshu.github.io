@@ -93,9 +93,3 @@ a[href] {
         background: white;
     }
 }
-@media screen {
-    main > header::after, main > footer::before,
-    main > article:only-child > header::after, main > article:only-child > footer::before {
-        color: #e98aa4;
-    }
-}
