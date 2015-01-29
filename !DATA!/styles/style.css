@@ -32,8 +32,7 @@
 
 /*  ROOT STYLES  */
 *:root {
-    font-family: "EB Garamond 12pt", Garamond, serif;
-    font-weight: normal;
+    font-weight: 300;
     font-size: 18pt;
     font-synthesis: none;
     font-feature-settings: "liga", "clig", "dlig", "calt", "cv04", "cv05";
@@ -89,9 +88,8 @@ body::after {
     left: 0;
     right: 0;
     margin: 0;
-    padding: 6pt;
-    height: 24pt;
-    font-family: "EB Garamond 08pt", "EB Garamond 12pt", Garamond, serif;
+    padding: 0 12pt;
+    height: 36pt;
     font-size: 12pt;
     white-space: nowrap;
     overflow: auto;
@@ -105,7 +103,10 @@ body::after {
     top: 36pt;
 }
 #global-nav a {
-    margin: 0 18pt;
+    display: inline-block;
+    margin: 0;
+    padding: 6pt 18pt;
+    text-decoration: none;
 }
 #alt-nav {
     position: fixed;
@@ -113,7 +114,6 @@ body::after {
     top: 36pt;
     margin: 3pt 4.5pt;
     padding: 0;
-    font-family: "EB Garamond 08pt", "EB Garamond 12pt", Garamond, serif;
     font-size: 12pt;
     z-index: 99;
 }
@@ -156,9 +156,7 @@ main > article:only-child > header, main > article:only-child > section, main > 
     page-break-after: always;
 }
 aside {
-    font-family: "EB Garamond 08pt", "EB Garamond 12pt", Garamond, serif;
-    font-size: 12pt;
-    line-height: 24pt;
+    font-weight: 200;
 }
 aside:not(:first-child)::before, aside:not(:last-child)::after {
     display: block;
@@ -170,6 +168,7 @@ aside:not(:first-child)::before, aside:not(:last-child)::after {
     content: "";
 }
 blockquote > footer:last-child {
+    font-weight: 200;
     font-size: 12pt;
     line-height: 16pt;
     text-align: right;
@@ -189,26 +188,27 @@ blockquote {
 h1 {
     margin: 36pt 0 36pt -72pt;
     font-size: 54pt;
-    font-weight: normal;
+    font-weight: inherit;
     line-height: 72pt;
     text-align: left;
 }
 h2 {
     margin: 18pt 0;
     font-size: 24pt;
-    font-weight: normal;
+    font-weight: inherit;
     line-height: 36pt;
     text-align: center;
 }
 h2::before {
-    content: "☙ ";
+    content: "~ ";
 }
 h2::after {
-    content: " ❧";
+    content: " ~";
 }
 h3 {
     margin: 18pt 0 0;
     font-size: inherit;
+    font-weight: inherit;
     line-height: inherit;
     text-decoration: underline;
 }
@@ -236,7 +236,7 @@ hr::after {
     height: 18pt;
     text-align: center;
     white-space: pre;
-    content: "❦  ~  ❦  ~  ❦"
+    content: "*   *   *"
 }
 iframe, img, figure {
     display: block;
@@ -275,6 +275,7 @@ p + p::before {
     position: absolute;
     top: 0;
     left: 6pt;
+    font-weight: 200;
     text-indent: 0;
     content: "¶";
 }
@@ -283,6 +284,7 @@ blockquote p::before, blockquote p + p::before {
     top: 0;
     left: auto;
     right: 100%;
+    font-weight: 200;
     text-indent: 0;
     content: open-quote;
 }
@@ -349,7 +351,7 @@ dt {
     float: left;
     margin: 0;
     padding: 0;
-    font-weight: normal;
+    font-weight: inherit;
 }
 dt + dt::before {
     content: ", "
@@ -364,7 +366,7 @@ dd::before {
     content: " : ";
 }
 dd + dd::before {
-    content: "〃 : ";
+    content: "″ : ";
 }
 dd:after {
     display: block;
@@ -377,7 +379,7 @@ dd:after {
 /*  PHRASING ELEMENTS  */
 
 a[href] {
-    font-weight: normal;
+    font-weight: inherit;
     text-decoration: underline;
     -moz-text-decoration-style: dashed;
     text-decoration-style: dashed;
@@ -388,7 +390,7 @@ a[href] {
     }
 }
 b {
-    font-weight: normal;
+    font-weight: inherit;
 }
 b::before {
     content: "#";
@@ -407,10 +409,10 @@ del {
 }
 dfn {
     font-style: inherit;
-    font-weight: normal;
+    font-weight: inherit;
 }
 em {
-    font-style: normal;
+    font-style: inherit;
 }
 em::before, em::after {
     content: "~";
@@ -419,7 +421,7 @@ i {
     font-style: italic;
 }
 i[lang] {
-    font-style: normal;
+    font-style: inherit;
 }
 i[lang]::before {
     content: "«";
@@ -431,16 +433,13 @@ ins {
     text-decoration: underline;
 }
 small {
-    font-family: "EB Garamond 08pt", "EB Garamond 12pt", Garamond, serif;
-    font-size: 12pt;
-    font-weight: inherit;
-    line-height: 16pt;
+    font-weight: 200;
 }
 s {
     text-decoration: line-through;
 }
 strong {
-    font-weight: inherit;
+    font-weight: 400;
 }
 sub, sup {
     line-height: 0;
@@ -449,5 +448,6 @@ sup {
     text-transform: uppercase;
 }
 u {
+    font-weight: inherit;
     text-decoration: none;
 }

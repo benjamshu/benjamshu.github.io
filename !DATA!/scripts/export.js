@@ -58,7 +58,7 @@ function exportNode(node) {
                     break;
 
                 case "H2":
-                    s = "\n☙ " + s + " ❧\n";
+                    s = "\n~ " + s + " ~\n";
                     break;
 
                 case "H3":
@@ -78,7 +78,7 @@ function exportNode(node) {
                     break;
 
                 case "HR":
-                    s = "\n❦  ~  ❦  ~  ❦\n";
+                    s = "\n* * *\n";
                     break;
 
                 case "INS":
@@ -129,7 +129,7 @@ function exportNode(node) {
             break;
 
     }
-    return s.replace(/ +/g, " ").replace(/ *\n */g, "\n").replace(/\n+/g, "\n").replace(/\n☙/g, "\n\n☙");
+    return s.replace(/ +/g, " ").replace(/ *\n */g, "\n").replace(/\n+/g, "\n");
 }
 
 function exportInit() {
