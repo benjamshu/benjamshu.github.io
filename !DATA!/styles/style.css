@@ -433,7 +433,9 @@ ins {
     text-decoration: underline;
 }
 small {
+    font-size: inherit;
     font-weight: 200;
+    line-height: inherit;
 }
 s {
     text-decoration: line-through;
