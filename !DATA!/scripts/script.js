@@ -23,7 +23,6 @@ function loadSnippets() {
             }
         }
         if (clone.childElementCount !== 0) document.body.insertBefore(clone, document.body.firstElementChild);
-        document.body.appendChild(document.importNode(this.responseXML.getElementById("global-footer"), true));
     }, false);
     Request.send();
 }

@@ -55,7 +55,7 @@ html {
     overflow: auto;
 }
 body {
-    margin: auto;
+    margin: 0 auto 36pt;
     padding: 0 72pt;
     max-width: 432pt;
 }
@@ -83,7 +83,7 @@ body::before {
 body::after {
     bottom: 0;
 }
-#global-nav, #global-footer {
+#global-nav {
     position: fixed;
     left: 0;
     right: 0;
@@ -126,10 +126,6 @@ body::after {
 }
 #alt-nav:hover a[href]:hover, #alt-nav:not(:hover) a[href]#alt-current {
     opacity: 1;
-}
-#global-footer {
-    bottom: 0;
-    text-align: right;
 }
 @media print {
     #global-nav, #alt-nav, #global-footer {
