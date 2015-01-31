@@ -151,7 +151,7 @@ header {
     border-image-slice: 100% 0;
     padding: 0 0 17pt 0;
 }
-section {
+section, nav {
     margin: 18pt 0;
 }
 #global-nav ~ main {
@@ -287,6 +287,10 @@ p {
 h3 + p, p + p {
     text-indent: 24pt;
 }
+footer h3 + p, footer p + p {
+    margin-top: 12pt;
+    text-indent: 0;
+}
 p + p::before {
     position: absolute;
     top: 0;
@@ -294,6 +298,9 @@ p + p::before {
     font-weight: 200;
     text-indent: 0;
     content: "¶";
+}
+footer p + p::before {
+    content: none;
 }
 blockquote p::before, blockquote p + p::before {
     position: absolute;
