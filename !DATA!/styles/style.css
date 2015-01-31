@@ -207,8 +207,15 @@ h1 {
     line-height: 72pt;
     text-align: left;
 }
-header h1 {
-    margin: 0 0 0 -72pt;
+@media (min-width: 384px) and (max-width: 576px) {
+    h1 {
+        margin: 0 0 0 -36pt;
+    }
+}
+@media (max-width: 384px) {
+    h1 {
+        margin: 0;
+    }
 }
 h2 {
     margin: 0 0 18pt;
