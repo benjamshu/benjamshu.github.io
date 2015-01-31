@@ -145,11 +145,17 @@ main, article, section, aside, nav, header, footer {
     margin: 0;
     padding: 0;
 }
+header {
+    margin: 36pt 0 17pt;
+    border-image-width: 0 0 2pt;
+    border-image-slice: 100% 0;
+    padding: 0 0 17pt 0;
+}
+section {
+    margin: 18pt 0;
+}
 #global-nav ~ main {
     padding-top: 36pt;
-}
-article:not(:only-child), section:not(:only-child), aside:not(:only-child), nav:not(:only-child), header:not(:only-child), footer:not(:only-child) {
-    margin: 18pt 0;
 }
 main > header, main > section, main > nav,
 main > article:only-child > header, main > article:only-child > section, main > article:only-child > nav {
@@ -167,7 +173,7 @@ aside:not(:first-child)::before, aside:not(:last-child)::after {
     width: 80%;
     content: "";
 }
-blockquote > footer:last-child {
+footer {
     font-weight: 200;
     font-size: 12pt;
     line-height: 16pt;
@@ -186,14 +192,17 @@ blockquote {
     margin: 18pt 12pt;
 }
 h1 {
-    margin: 36pt 0 36pt -72pt;
+    margin: 0 0 0 -72pt;
     font-size: 54pt;
     font-weight: inherit;
     line-height: 72pt;
     text-align: left;
 }
+header h1 {
+    margin: 0 0 0 -72pt;
+}
 h2 {
-    margin: 18pt 0;
+    margin: 0 0 18pt;
     font-size: 24pt;
     font-weight: inherit;
     line-height: 36pt;
@@ -238,12 +247,22 @@ hr::after {
     white-space: pre;
     content: "*   *   *"
 }
-iframe, img, figure {
+iframe, img, figure, svg {
     display: block;
-    margin: 0;
+    margin: auto;
     border: none;
     padding: 0;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
     max-width: 100%;
+}
+figcaption {
+    margin: 0;
+    font-weight: 200;
+    font-size: 12pt;
+    line-height: 16pt;
+    text-align: right;
 }
 figure {
     margin: 18pt auto;
@@ -264,9 +283,6 @@ p {
     position: relative;
     margin: 0;
     padding: 0;
-}
-header h1 + p {
-    margin: -36pt 0 36pt;
 }
 h3 + p, p + p {
     text-indent: 24pt;

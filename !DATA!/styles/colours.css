@@ -11,6 +11,7 @@
 */
 * {
     transition: color .25s;
+    border-color: inherit;
 }
 *:root h2 *, *:root h3 *, *:root h4 *, *:root h5 *, *:root h6 *, *:root hr *, *:root dt *, *:root dfn *, *:root blockquote *, *:root a[href] * {
     color: inherit;
@@ -18,7 +19,37 @@
 *:root {
     color: #636363;
 }
-html::selection, mark {
+header {
+    border-image-source: linear-gradient(to right, #636363, #0c0c0c);
+}
+html[data-colour="cyan"] header {
+    border-image-source: linear-gradient(to right, #31b9db, #0c0c0c);
+}
+html[data-colour="blue"] header {
+    border-image-source: linear-gradient(to right, #7476fc, #0c0c0c);
+}
+html[data-colour="purple"] header {
+    border-image-source: linear-gradient(to right, #c258f2, #0c0c0c);
+}
+html[data-colour="magenta"] header {
+    border-image-source: linear-gradient(to right, #e63ca4, #0c0c0c);
+}
+html[data-colour="red"] header {
+    border-image-source: linear-gradient(to right, #e83f2c, #0c0c0c);
+}
+html[data-colour="yellow"] header {
+    border-image-source: linear-gradient(to right, #f6d037, #0c0c0c);
+}
+html[data-colour="green"] header {
+    border-image-source: linear-gradient(to right, #6ad622, #0c0c0c);
+}
+html[data-colour="teal"] header {
+    border-image-source: linear-gradient(to right, #49cfa2, #0c0c0c);
+}
+html::selection, *:root *[data-colour]::selection, *:root mark[data-colour], mark {
+    background: #cccccc;
+}
+html::-moz-selection, *:root *[data-colour]::-moz-selection, *:root mark[data-colour], mark {
     background: #cccccc;
 }
 *::selection {
@@ -27,7 +58,10 @@ html::selection, mark {
 *::-moz-selection {
     background: #cccccc;
 }
-html[data-colour="cyan"]::selection, mark[data-colour="cyan"] {
+*:root *[data-colour="cyan"]::selection, *:root mark[data-colour="cyan"], html[data-colour="cyan"] mark {
+    background: #bfe7f2;
+}
+*:root *[data-colour="cyan"]::-moz-selection, *:root mark[data-colour="cyan"], html[data-colour="cyan"] mark {
     background: #bfe7f2;
 }
 html[data-colour="cyan"] *::selection {
@@ -36,7 +70,10 @@ html[data-colour="cyan"] *::selection {
 html[data-colour="cyan"] *::-moz-selection {
     background: #bfe7f2;
 }
-html[data-colour="blue"]::selection, mark[data-colour="blue"] {
+*:root *[data-colour="blue"]::selection, *:root mark[data-colour="blue"], html[data-colour="blue"] mark {
+    background: #d0d1f6;
+}
+*:root *[data-colour="blue"]::-moz-selection, *:root mark[data-colour="blue"], html[data-colour="blue"] mark {
     background: #d0d1f6;
 }
 html[data-colour="blue"] *::selection {
@@ -45,7 +82,10 @@ html[data-colour="blue"] *::selection {
 html[data-colour="blue"] *::-moz-selection {
     background: #d0d1f6;
 }
-html[data-colour="purple"]::selection, mark[data-colour="purple"] {
+*:root *[data-colour="purple"]::selection, *:root mark[data-colour="purple"], html[data-colour="purple"] mark {
+    background: #eabdff;
+}
+*:root *[data-colour="purple"]::-moz-selection, *:root mark[data-colour="purple"], html[data-colour="purple"] mark {
     background: #eabdff;
 }
 html[data-colour="purple"] *::selection {
@@ -54,7 +94,10 @@ html[data-colour="purple"] *::selection {
 html[data-colour="purple"] *::-moz-selection {
     background: #eabdff;
 }
-html[data-colour="magenta"]::selection, mark[data-colour="magenta"] {
+*:root *[data-colour="magenta"]::selection, *:root mark[data-colour="magenta"], html[data-colour="magenta"] mark {
+    background: #f0b2d8;
+}
+*:root *[data-colour="magenta"]::-moz-selection, *:root mark[data-colour="magenta"], html[data-colour="magenta"] mark {
     background: #f0b2d8;
 }
 html[data-colour="magenta"] *::selection {
@@ -63,7 +106,10 @@ html[data-colour="magenta"] *::selection {
 html[data-colour="magenta"] *::-moz-selection {
     background: #f0b2d8;
 }
-html[data-colour="red"]::selection, mark[data-colour="red"] {
+*:root *[data-colour="red"]::selection, *:root mark[data-colour="red"], html[data-colour="red"] mark {
+    background: #f9a59b;
+}
+*:root *[data-colour="red"]::-moz-selection, *:root mark[data-colour="red"], html[data-colour="red"] mark {
     background: #f9a59b;
 }
 html[data-colour="red"] *::selection {
@@ -72,7 +118,10 @@ html[data-colour="red"] *::selection {
 html[data-colour="red"] *::-moz-selection {
     background: #f9a59b;
 }
-html[data-colour="yellow"]::selection, mark[data-colour="yellow"] {
+*:root *[data-colour="yellow"]::selection, *:root mark[data-colour="yellow"], html[data-colour="yellow"] mark {
+    background: #fcf0be;
+}
+*:root *[data-colour="yellow"]::-moz-selection, *:root mark[data-colour="yellow"], html[data-colour="yellow"] mark {
     background: #fcf0be;
 }
 html[data-colour="yellow"] *::selection {
@@ -81,7 +130,10 @@ html[data-colour="yellow"] *::selection {
 html[data-colour="yellow"] *::-moz-selection {
     background: #fcf0be;
 }
-html[data-colour="green"]::selection, mark[data-colour="green"] {
+*:root *[data-colour="green"]::selection, *:root mark[data-colour="green"], html[data-colour="green"] mark {
+    background: #d5fcbb;
+}
+*:root *[data-colour="green"]::-moz-selection, *:root mark[data-colour="green"], html[data-colour="green"] mark {
     background: #d5fcbb;
 }
 html[data-colour="green"] *::selection {
@@ -90,7 +142,10 @@ html[data-colour="green"] *::selection {
 html[data-colour="green"] *::-moz-selection {
     background: #d5fcbb;
 }
-html[data-colour="teal"]::selection, mark[data-colour="teal"] {
+*:root *[data-colour="teal"]::selection, *:root mark[data-colour="teal"], html[data-colour="teal"] mark {
+    background: #bdf0df;
+}
+*:root *[data-colour="teal"]::-moz-selection, *:root mark[data-colour="teal"], html[data-colour="teal"] mark {
     background: #bdf0df;
 }
 html[data-colour="teal"] *::selection {
@@ -154,34 +209,6 @@ html[data-colour="teal"] a[href]:not([data-colour]):hover, html[data-colour="tea
 #global-footer {
     color: #a3a3a3;
 }
-h2, h3, h4, h5, h6, hr, dt, dfn, blockquote {
-    color: #3b3b3b;
-    background: none;
-}
-html[data-colour="cyan"] h2, html[data-colour="cyan"] h3, html[data-colour="cyan"] h4, html[data-colour="cyan"] h5, html[data-colour="cyan"] h6, html[data-colour="cyan"] hr, html[data-colour="cyan"] dt, html[data-colour="cyan"] dfn, html[data-colour="cyan"] blockquote {
-    color: #00495c;
-}
-html[data-colour="blue"] h2, html[data-colour="blue"] h3, html[data-colour="blue"] h4, html[data-colour="blue"] h5, html[data-colour="blue"] h6, html[data-colour="blue"] hr, html[data-colour="blue"] dt, html[data-colour="blue"] dfn, html[data-colour="blue"] blockquote {
-    color: #383966;
-}
-html[data-colour="purple"] h2, html[data-colour="purple"] h3, html[data-colour="purple"] h4, html[data-colour="purple"] h5, html[data-colour="purple"] h6, html[data-colour="purple"] hr, html[data-colour="purple"] dt, html[data-colour="purple"] dfn, html[data-colour="purple"] blockquote {
-    color: #4c3159;
-}
-html[data-colour="magenta"] h2, html[data-colour="magenta"] h3, html[data-colour="magenta"] h4, html[data-colour="magenta"] h5, html[data-colour="magenta"] h6, html[data-colour="magenta"] hr, html[data-colour="magenta"] dt, html[data-colour="magenta"] dfn, html[data-colour="magenta"] blockquote {
-    color: #592846;
-}
-html[data-colour="red"] h2, html[data-colour="red"] h3, html[data-colour="red"] h4, html[data-colour="red"] h5, html[data-colour="red"] h6, html[data-colour="red"] hr, html[data-colour="red"] dt, html[data-colour="red"] dfn, html[data-colour="red"] blockquote {
-    color: #5d2721;
-}
-html[data-colour="yellow"] h2, html[data-colour="yellow"] h3, html[data-colour="yellow"] h4, html[data-colour="yellow"] h5, html[data-colour="yellow"] h6, html[data-colour="yellow"] hr, html[data-colour="yellow"] dt, html[data-colour="yellow"] dfn, html[data-colour="yellow"] blockquote {
-    color: #4f420d;
-}
-html[data-colour="green"] h2, html[data-colour="green"] h3, html[data-colour="green"] h4, html[data-colour="green"] h5, html[data-colour="green"] h6, html[data-colour="green"] hr, html[data-colour="green"] dt, html[data-colour="green"] dfn, html[data-colour="green"] blockquote {
-    color: #1f4505;
-}
-html[data-colour="teal"] h2, html[data-colour="teal"] h3, html[data-colour="teal"] h4, html[data-colour="teal"] h5, html[data-colour="teal"] h6, html[data-colour="teal"] hr, html[data-colour="teal"] dt, html[data-colour="teal"] dfn, html[data-colour="teal"] blockquote {
-    color: #1c4b3b;
-}
 p::before, p::after {
     color: #cccccc;
 }
@@ -209,13 +236,13 @@ html[data-colour="green"] p::before, html[data-colour="green"] p::after {
 html[data-colour="teal"] p::before, html[data-colour="teal"] p::after {
     color: #bdf0df;
 }
-h1, b, em {
+h1, h2, h3, h4, h5, h6, hr, dt, dfn, blockquote, b, em {
     color: #3b3b3b;
 }
 code, strong, u {
     color: #1c1c1c;
 }
-aside, small {
+aside, small, s, del {
     color: #a3a3a3;
 }
 @media print {
