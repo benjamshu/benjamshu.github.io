@@ -283,6 +283,7 @@ p {
     position: relative;
     margin: 0;
     padding: 0;
+    text-align: justify;
 }
 h3 + p, p + p {
     text-indent: 24pt;
