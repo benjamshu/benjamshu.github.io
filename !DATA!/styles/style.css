@@ -155,10 +155,10 @@ main, article, section, aside, nav, header, footer {
     padding: 0;
 }
 header {
-    margin: 36pt 0 17pt;
+    margin: 36pt 0 18pt;
     border-image-width: 0 0 2pt;
     border-image-slice: 100% 0;
-    padding: 0 0 17pt 0;
+    padding: 0 0 16pt 0;
 }
 section, nav {
     margin: 18pt 0;
