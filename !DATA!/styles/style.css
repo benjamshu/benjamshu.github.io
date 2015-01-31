@@ -54,10 +54,25 @@ html {
     padding: 36pt;
     overflow: auto;
 }
+@media (max-width: 192px) {
+    html {
+        padding: 36pt 0;
+    }
+}
 body {
     margin: 0 auto 36pt;
     padding: 0 72pt;
     max-width: 432pt;
+}
+@media (min-width: 384px) and (max-width: 576px) {
+    body {
+        padding: 0 36pt;
+    }
+}
+@media (max-width: 384px) {
+    body {
+        padding: 0;
+    }
 }
 body::before, body::after, #global-nav::after {
     display: block;
