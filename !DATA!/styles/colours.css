@@ -176,6 +176,42 @@ body::after {
     color: #3b3b3b;
     background: #f5f5f5;
 }
+#alt-nav a[href] {
+    color: #a3a3a3;
+    background: transparent;
+    transition: color .5s, background .5s;
+}
+#alt-nav a[href]#alt-current:not(:hover) {
+    color: #3b3b3b;
+}
+#alt-nav a[href]:hover {
+    color: #f5f5f5;
+    background: #636363;
+}
+html[data-colour="cyan"] #alt-nav a[href]:hover {
+    background: #31b9db;
+}
+html[data-colour="blue"] #alt-nav a[href]:hover {
+    background: #7476fc;
+}
+html[data-colour="purple"] #alt-nav a[href]:hover {
+    background: #c258f2;
+}
+html[data-colour="magenta"] #alt-nav a[href]:hover {
+    background: #e63ca4;
+}
+html[data-colour="red"] #alt-nav a[href]:hover {
+    background: #e83f2c;
+}
+html[data-colour="yellow"] #alt-nav a[href]:hover {
+    background: #f6d037;
+}
+html[data-colour="green"] #alt-nav a[href]:hover {
+    background: #6ad622;
+}
+html[data-colour="teal"] #alt-nav a[href]:hover {
+    background: #49cfa2;
+}
 a[href]:not(:hover) {
     color: #3b3b3b;
 }

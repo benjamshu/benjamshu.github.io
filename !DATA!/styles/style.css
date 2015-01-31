@@ -112,20 +112,18 @@ body::after {
     position: fixed;
     right: 0;
     top: 36pt;
-    margin: 3pt 4.5pt;
+    margin: 0;
     padding: 0;
-    font-size: 12pt;
     z-index: 99;
 }
 #alt-nav a[href] {
-    margin: 0 4.5pt;
-    transition: opacity .5s;
-}
-#alt-nav a[href] {
-    opacity: .5;
-}
-#alt-nav:hover a[href]:hover, #alt-nav:not(:hover) a[href]#alt-current {
-    opacity: 1;
+    display: inline-block;
+    margin: 0 1.5pt;
+    border-radius: 2pt;
+    padding: 2pt 3pt;
+    font-size: 12pt;
+    line-height: 16pt;
+    text-decoration: none;
 }
 @media print {
     #global-nav, #alt-nav, #global-footer {
