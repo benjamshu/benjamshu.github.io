@@ -189,7 +189,7 @@ footer {
     text-align: right;
 }
 blockquote > footer:last-child::before {
-    content: "– ";
+    content: "– ";
 }
 
 /*  BLOCK-LEVEL ELEMENTS  */
@@ -262,7 +262,7 @@ hr::after {
     height: 18pt;
     text-align: center;
     white-space: pre;
-    content: "*   *   *"
+    content: "*   *   *"
 }
 iframe, img, figure, svg {
     display: block;
@@ -404,10 +404,10 @@ dd {
 dd::before {
     display: inline;
     white-space: pre-wrap;
-    content: " : ";
+    content: " : ";
 }
 dd + dd::before {
-    content: "″ : ";
+    content: "″ : ";
 }
 dd:after {
     display: block;
