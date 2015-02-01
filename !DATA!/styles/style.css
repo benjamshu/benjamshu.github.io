@@ -225,10 +225,10 @@ h2 {
     text-align: center;
 }
 h2::before {
-    content: "~ ";
+    content: "~ ";
 }
 h2::after {
-    content: " ~";
+    content: " ~";
 }
 h3 {
     margin: 18pt 0 0;
