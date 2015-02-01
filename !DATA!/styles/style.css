@@ -235,6 +235,7 @@ h3 {
     font-size: inherit;
     font-weight: inherit;
     line-height: inherit;
+    text-align: left;
     text-decoration: underline;
 }
 h3::after {
