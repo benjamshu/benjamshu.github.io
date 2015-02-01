@@ -1,61 +1,27 @@
-/*  INITIALS  */
-@font-face {
-    font-family: 'EB Garamond Initials';
-    src: url('../fonts/EBGaramond-Initials.eot');
-    src: url('../fonts/EBGaramond-Initials.woff') format('woff'),
-         url('../fonts/EBGaramond-Initials.eot') format('embedded-opentype');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'EB Garamond Initial Ornaments';
-    src: url('../fonts/EBGaramond-InitialsF1.eot');
-    src: url('../fonts/EBGaramond-InitialsF1.woff') format('woff'),
-         url('../fonts/EBGaramond-InitialsF1.eot') format('embedded-opentype');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'EB Garamond Initial Letters';
-    src: url('../fonts/EBGaramond-InitialsF2.eot');
-    src: url('../fonts/EBGaramond-InitialsF2.woff') format('woff'),
-         url('../fonts/EBGaramond-InitialsF2.eot') format('embedded-opentype');
-    font-weight: normal;
-    font-style: normal;
-}
+/*  BODY TEXT  */
+@import url('../fonts/Source%20Sans%20Pro/source-sans-pro.css');
 
-/*  12PT FONTS  */
+/*  HEADER TEXT  */
 @font-face {
-    font-family: 'EB Garamond 12pt';
-    src: url('../fonts/EBGaramond12-Regular.eot');
-    src: url('../fonts/EBGaramond12-Regular.woff') format('woff'),
-         url('../fonts/EBGaramond12-Regular.eot') format('embedded-opentype');
-    font-weight: normal;
+    font-family: 'Neris';
+    src: url('../fonts/Neris/Neris-Light-webfont.eot');
+    src: url('../fonts/Neris/Neris-Light-webfont.woff') format('woff'),
+         url('../fonts/Neris/Neris-Light-webfont.eot') format('embedded-opentype');
+    font-weight: 300;
     font-style: normal;
 }
 @font-face {
-    font-family: 'EB Garamond 12pt';
-    src: url('../fonts/EBGaramond12-Italic.eot');
-    src: url('../fonts/EBGaramond12-Italic.woff') format('woff'),
-         url('../fonts/EBGaramond12-Italic.eot') format('embedded-opentype');
-    font-weight: normal;
+    font-family: 'Neris';
+    src: url('../fonts/Neris/Neris-LightItalic-webfont.eot');
+    src: url('../fonts/Neris/Neris-LightItalic-webfont.woff') format('woff'),
+         url('../fonts/Neris/Neris-LightItalic-webfont.eot') format('embedded-opentype');
+    font-weight: 300;
     font-style: italic;
 }
 
-/*  08PT FONTS  */
-@font-face {
-    font-family: 'EB Garamond 08pt';
-    src: url('../fonts/EBGaramond08-Regular.eot');
-    src: url('../fonts/EBGaramond08-Regular.woff') format('woff'),
-         url('../fonts/EBGaramond08-Regular.eot') format('embedded-opentype');
-    font-weight: normal;
-    font-style: normal;
+:root {
+    font-family: 'Source Sans Pro', 'News Gothic', sans-serif;
 }
-@font-face {
-    font-family: 'EB Garamond 08pt';
-    src: url('../fonts/EBGaramond08-Italic.eot');
-    src: url('../fonts/EBGaramond08-Italic.woff') format('woff'),
-         url('../fonts/EBGaramond08-Italic.eot') format('embedded-opentype');
-    font-weight: normal;
-    font-style: italic;
+h1, h2, header {
+    font-family: 'Neris', 'News Gothic', sans-serif;
 }

@@ -1,89 +1,285 @@
-h1 *:not(html), h2 *:not(html), h3 *:not(html), h4 *:not(html), h5 *:not(html), h6 *:not(html), dt *:not(html), del *:not(html), dfn *:not(html), ins *:not(html), s *:not(html), strong *:not(html), #global-nav *:not(html), #global-footer *:not(html), hr::after, a[href] {
+/*
+    COLOUR THEMES:
+    - RED : Linguistics
+    - YELLOW : Projects
+    - GREEN : Culture
+    - TEAL : Criticism & Interpretation
+    - CYAN : Arts
+    - BLUE : Theory
+    - PURPLE : Gendre + Race + Identity
+    - MAGENTA : Narrative
+*/
+* {
+    transition: color .25s;
+    border-color: inherit;
+}
+*:root h2 *, *:root h3 *, *:root h4 *, *:root h5 *, *:root h6 *, *:root hr *, *:root dt *, *:root dfn *, *:root blockquote *, *:root a[href] * {
     color: inherit;
 }
 *:root {
-    color: #51555c;
+    color: #636363;
 }
-*:root::selection {
-    background: #d6dae0;
+header {
+    border-image-source: linear-gradient(to right, #636363, #0c0c0c);
+}
+html[data-colour="cyan"] header {
+    border-image-source: linear-gradient(to right, #31b9db, #0c0c0c);
+}
+html[data-colour="blue"] header {
+    border-image-source: linear-gradient(to right, #7476fc, #0c0c0c);
+}
+html[data-colour="purple"] header {
+    border-image-source: linear-gradient(to right, #c258f2, #0c0c0c);
+}
+html[data-colour="magenta"] header {
+    border-image-source: linear-gradient(to right, #e63ca4, #0c0c0c);
+}
+html[data-colour="red"] header {
+    border-image-source: linear-gradient(to right, #e83f2c, #0c0c0c);
+}
+html[data-colour="yellow"] header {
+    border-image-source: linear-gradient(to right, #f6d037, #0c0c0c);
+}
+html[data-colour="green"] header {
+    border-image-source: linear-gradient(to right, #6ad622, #0c0c0c);
+}
+html[data-colour="teal"] header {
+    border-image-source: linear-gradient(to right, #49cfa2, #0c0c0c);
+}
+html::selection, *:root *[data-colour]::selection, *:root mark[data-colour], mark {
+    background: #cccccc;
+}
+html::-moz-selection, *:root *[data-colour]::-moz-selection, *:root mark[data-colour], mark {
+    background: #cccccc;
 }
 *::selection {
-    background: #d6dae0;
+    background: #cccccc;
 }
 *::-moz-selection {
-    background: #d6dae0;
+    background: #cccccc;
+}
+*:root *[data-colour="cyan"]::selection, *:root mark[data-colour="cyan"], html[data-colour="cyan"] mark {
+    background: #bfe7f2;
+}
+*:root *[data-colour="cyan"]::-moz-selection, *:root mark[data-colour="cyan"], html[data-colour="cyan"] mark {
+    background: #bfe7f2;
+}
+html[data-colour="cyan"] *::selection {
+    background: #bfe7f2;
+}
+html[data-colour="cyan"] *::-moz-selection {
+    background: #bfe7f2;
+}
+*:root *[data-colour="blue"]::selection, *:root mark[data-colour="blue"], html[data-colour="blue"] mark {
+    background: #d0d1f6;
+}
+*:root *[data-colour="blue"]::-moz-selection, *:root mark[data-colour="blue"], html[data-colour="blue"] mark {
+    background: #d0d1f6;
+}
+html[data-colour="blue"] *::selection {
+    background: #d0d1f6;
+}
+html[data-colour="blue"] *::-moz-selection {
+    background: #d0d1f6;
+}
+*:root *[data-colour="purple"]::selection, *:root mark[data-colour="purple"], html[data-colour="purple"] mark {
+    background: #eabdff;
+}
+*:root *[data-colour="purple"]::-moz-selection, *:root mark[data-colour="purple"], html[data-colour="purple"] mark {
+    background: #eabdff;
+}
+html[data-colour="purple"] *::selection {
+    background: #eabdff;
+}
+html[data-colour="purple"] *::-moz-selection {
+    background: #eabdff;
+}
+*:root *[data-colour="magenta"]::selection, *:root mark[data-colour="magenta"], html[data-colour="magenta"] mark {
+    background: #f0b2d8;
+}
+*:root *[data-colour="magenta"]::-moz-selection, *:root mark[data-colour="magenta"], html[data-colour="magenta"] mark {
+    background: #f0b2d8;
+}
+html[data-colour="magenta"] *::selection {
+    background: #f0b2d8;
+}
+html[data-colour="magenta"] *::-moz-selection {
+    background: #f0b2d8;
+}
+*:root *[data-colour="red"]::selection, *:root mark[data-colour="red"], html[data-colour="red"] mark {
+    background: #f9a59b;
+}
+*:root *[data-colour="red"]::-moz-selection, *:root mark[data-colour="red"], html[data-colour="red"] mark {
+    background: #f9a59b;
+}
+html[data-colour="red"] *::selection {
+    background: #f9a59b;
+}
+html[data-colour="red"] *::-moz-selection {
+    background: #f9a59b;
+}
+*:root *[data-colour="yellow"]::selection, *:root mark[data-colour="yellow"], html[data-colour="yellow"] mark {
+    background: #fcf0be;
+}
+*:root *[data-colour="yellow"]::-moz-selection, *:root mark[data-colour="yellow"], html[data-colour="yellow"] mark {
+    background: #fcf0be;
+}
+html[data-colour="yellow"] *::selection {
+    background: #fcf0be;
+}
+html[data-colour="yellow"] *::-moz-selection {
+    background: #fcf0be;
+}
+*:root *[data-colour="green"]::selection, *:root mark[data-colour="green"], html[data-colour="green"] mark {
+    background: #d5fcbb;
+}
+*:root *[data-colour="green"]::-moz-selection, *:root mark[data-colour="green"], html[data-colour="green"] mark {
+    background: #d5fcbb;
+}
+html[data-colour="green"] *::selection {
+    background: #d5fcbb;
+}
+html[data-colour="green"] *::-moz-selection {
+    background: #d5fcbb;
+}
+*:root *[data-colour="teal"]::selection, *:root mark[data-colour="teal"], html[data-colour="teal"] mark {
+    background: #bdf0df;
+}
+*:root *[data-colour="teal"]::-moz-selection, *:root mark[data-colour="teal"], html[data-colour="teal"] mark {
+    background: #bdf0df;
+}
+html[data-colour="teal"] *::selection {
+    background: #bdf0df;
+}
+html[data-colour="teal"] *::-moz-selection {
+    background: #bdf0df;
 }
 html {
-    background: #e5e8ed;
+    background: #f5f5f5;
 }
 body::before, #global-nav::after {
-    background: linear-gradient(to bottom, rgb(229, 232, 237), rgba(229, 232, 237, 0));
+    background: linear-gradient(to bottom, rgb(245, 245, 245), rgba(245, 245, 245, 0));
 }
 body::after {
-    background: linear-gradient(to top, rgb(229, 232, 237), rgba(229, 232, 237, 0));
+    background: linear-gradient(to top, rgb(245, 245, 245), rgba(245, 245, 245, 0));
 }
 #global-nav {
-    color: #e5e8ed;
-    background: #1c2027;
+    color: #f5f5f5;
+    background: #3b3b3b;
+}
+#global-nav a[href] {
+    color: inherit;
+    background: transparent;
+    transition: color .5s, background .5s;
+}
+#global-nav a[href]:hover {
+    color: #3b3b3b;
+    background: #f5f5f5;
+}
+#alt-nav a[href] {
+    color: #a3a3a3;
+    background: transparent;
+    transition: color .5s, background .5s;
+}
+#alt-nav a[href]#alt-current:not(:hover) {
+    color: #3b3b3b;
+}
+#alt-nav a[href]:hover {
+    color: #f5f5f5;
+    background: #636363;
+}
+html[data-colour="cyan"] #alt-nav a[href]:hover {
+    background: #31b9db;
+}
+html[data-colour="blue"] #alt-nav a[href]:hover {
+    background: #7476fc;
+}
+html[data-colour="purple"] #alt-nav a[href]:hover {
+    background: #c258f2;
+}
+html[data-colour="magenta"] #alt-nav a[href]:hover {
+    background: #e63ca4;
+}
+html[data-colour="red"] #alt-nav a[href]:hover {
+    background: #e83f2c;
+}
+html[data-colour="yellow"] #alt-nav a[href]:hover {
+    background: #f6d037;
+}
+html[data-colour="green"] #alt-nav a[href]:hover {
+    background: #6ad622;
+}
+html[data-colour="teal"] #alt-nav a[href]:hover {
+    background: #49cfa2;
+}
+a[href]:not(:hover) {
+    color: #3b3b3b;
+}
+a[href]:not([data-colour]):hover, *.colour, html *[data-colour] {
+    color: #636363;
+}
+html[data-colour="cyan"] a[href]:not([data-colour]):hover, html[data-colour="cyan"] *.colour, html *[data-colour="cyan"] {
+    color: #31b9db;
+}
+html[data-colour="blue"] a[href]:not([data-colour]):hover, html[data-colour="blue"] *.colour, html *[data-colour="blue"] {
+    color: #7476fc;
+}
+html[data-colour="purple"] a[href]:not([data-colour]):hover, html[data-colour="purple"] *.colour, html *[data-colour="purple"] {
+    color: #c258f2;
+}
+html[data-colour="magenta"] a[href]:not([data-colour]):hover, html[data-colour="magenta"] *.colour, html *[data-colour="magenta"] {
+    color: #e63ca4;
+}
+html[data-colour="red"] a[href]:not([data-colour]):hover, html[data-colour="red"] *.colour, html *[data-colour="red"] {
+    color: #e83f2c;
+}
+html[data-colour="yellow"] a[href]:not([data-colour]):hover, html[data-colour="yellow"] *.colour, html *[data-colour="yellow"] {
+    color: #f6d037;
+}
+html[data-colour="green"] a[href]:not([data-colour]):hover, html[data-colour="green"] *.colour, html *[data-colour="green"] {
+    color: #6ad622;
+}
+html[data-colour="teal"] a[href]:not([data-colour]):hover, html[data-colour="teal"] *.colour, html *[data-colour="teal"] {
+    color: #49cfa2;
 }
 #global-footer {
-    color: #a6acb1;
-}
-h2, h3, h4, h5, h6, hr, dt, dfn, blockquote {
-    color: #8a3756;
-    background: none;
+    color: #a3a3a3;
 }
 p::before, p::after {
-    color: #e98aa4;
+    color: #cccccc;
 }
-h1, b, code, em, u {
-    color: #1c2027;
+html[data-colour="cyan"] p::before, html[data-colour="cyan"] p::after {
+    color: #bfe7f2;
 }
-del b, del code, del em, del u,
-h1 del, b del, code del, em del, u del {
-    color: #436235;
+html[data-colour="blue"] p::before, html[data-colour="blue"] p::after {
+    color: #d0d1f6;
 }
-ins b, ins code, ins em, ins u,
-h1 ins, b ins, code ins, em ins, u ins {
-    color: #345990;
+html[data-colour="purple"] p::before, html[data-colour="purple"] p::after {
+    color: #eabdff;
 }
-s b, s code, s em, s u,
-h1 s, b s, code s, em s, u s {
-    color: #7b7f85;
+html[data-colour="magenta"] p::before, html[data-colour="magenta"] p::after {
+    color: #f0b2d8;
 }
-strong b, strong code, strong em, strong u,
-h1 strong, b strong, code strong, em strong, u strong {
-    color: #346553;
+html[data-colour="red"] p::before, html[data-colour="red"] p::after {
+    color: #f9a59b;
 }
-del {
-    color: #47792c;
+html[data-colour="yellow"] p::before, html[data-colour="yellow"] p::after {
+    color: #fcf0be;
 }
-ins {
-    color: #2c69c4;
+html[data-colour="green"] p::before, html[data-colour="green"] p::after {
+    color: #d5fcbb;
 }
-mark {
-    background: #fac6ca;
+html[data-colour="teal"] p::before, html[data-colour="teal"] p::after {
+    color: #bdf0df;
 }
-del mark {
-    background: #cce3b6;
+h1, h2, h3, h4, h5, h6, hr, dt, dfn, blockquote, b, em {
+    color: #3b3b3b;
 }
-ins mark {
-    background: #c1dded;
+code, strong, u {
+    color: #1c1c1c;
 }
-s mark {
-    background: #d6dae0;
-}
-strong mark {
-    background: #c1e4c8;
-}
-s {
-    color: #a6acb1;
-}
-strong {
-    color: #2c7e5c;
-}
-a[href] {
-    color: inherit;
+aside, small, s, del {
+    color: #a3a3a3;
 }
 @media print {
     *:root {
@@ -91,11 +287,5 @@ a[href] {
     }
     html, #global-nav, #global-footer {
         background: white;
-    }
-}
-@media screen {
-    main > header::after, main > footer::before,
-    main > article:only-child > header::after, main > article:only-child > footer::before {
-        color: #e98aa4;
     }
 }

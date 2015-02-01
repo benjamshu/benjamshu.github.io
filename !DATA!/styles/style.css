@@ -32,8 +32,7 @@
 
 /*  ROOT STYLES  */
 *:root {
-    font-family: "EB Garamond 12pt", Garamond, serif;
-    font-weight: normal;
+    font-weight: 300;
     font-size: 18pt;
     font-synthesis: none;
     font-feature-settings: "liga", "clig", "dlig", "calt", "cv04", "cv05";
@@ -55,10 +54,25 @@ html {
     padding: 36pt;
     overflow: auto;
 }
+@media (max-width: 192px) {
+    html {
+        padding: 36pt 0;
+    }
+}
 body {
-    margin: auto;
+    margin: 0 auto 36pt;
     padding: 0 72pt;
     max-width: 432pt;
+}
+@media (min-width: 384px) and (max-width: 576px) {
+    body {
+        padding: 0 36pt;
+    }
+}
+@media (max-width: 384px) {
+    body {
+        padding: 0;
+    }
 }
 body::before, body::after, #global-nav::after {
     display: block;
@@ -84,14 +98,13 @@ body::before {
 body::after {
     bottom: 0;
 }
-#global-nav, #global-footer {
+#global-nav {
     position: fixed;
     left: 0;
     right: 0;
     margin: 0;
-    padding: 6pt;
-    height: 24pt;
-    font-family: "EB Garamond 08pt", "EB Garamond 12pt", Garamond, serif;
+    padding: 0 12pt;
+    height: 36pt;
     font-size: 12pt;
     white-space: nowrap;
     overflow: auto;
@@ -105,31 +118,27 @@ body::after {
     top: 36pt;
 }
 #global-nav a {
-    margin: 0 18pt;
+    display: inline-block;
+    margin: 0;
+    padding: 6pt 18pt;
+    text-decoration: none;
 }
 #alt-nav {
     position: fixed;
     right: 0;
     top: 36pt;
-    margin: 3pt 4.5pt;
+    margin: 0;
     padding: 0;
-    font-family: "EB Garamond 08pt", "EB Garamond 12pt", Garamond, serif;
-    font-size: 12pt;
     z-index: 99;
 }
 #alt-nav a[href] {
-    margin: 0 4.5pt;
-    transition: opacity .5s;
-}
-#alt-nav a[href] {
-    opacity: .5;
-}
-#alt-nav:hover a[href]:hover, #alt-nav:not(:hover) a[href]#alt-current {
-    opacity: 1;
-}
-#global-footer {
-    bottom: 0;
-    text-align: right;
+    display: inline-block;
+    margin: 0 1.5pt;
+    border-radius: 2pt;
+    padding: 2pt 3pt;
+    font-size: 12pt;
+    line-height: 16pt;
+    text-decoration: none;
 }
 @media print {
     #global-nav, #alt-nav, #global-footer {
@@ -145,30 +154,24 @@ main, article, section, aside, nav, header, footer {
     margin: 0;
     padding: 0;
 }
+header {
+    margin: 36pt 0 18pt;
+    border-image-width: 0 0 2pt;
+    border-image-slice: 100% 0;
+    padding: 0 0 16pt 0;
+}
+section, nav {
+    margin: 18pt 0;
+}
 #global-nav ~ main {
     padding-top: 36pt;
-}
-article:not(:only-child), section:not(:only-child), aside:not(:only-child), nav:not(:only-child), header:not(:only-child), footer:not(:only-child) {
-    margin: 18pt 0;
 }
 main > header, main > section, main > nav,
 main > article:only-child > header, main > article:only-child > section, main > article:only-child > nav {
     page-break-after: always;
 }
-@media screen {
-    main > header::after, main > footer::before,
-    main > article:only-child > header::after, main > article:only-child > footer::before {
-        display: block;
-        margin: 18pt 0;
-        padding: 0;
-        text-align: center;
-        content: "❦ ~ ❦ ~ ❦";
-    }
-}
 aside {
-    font-family: "EB Garamond 08pt", "EB Garamond 12pt", Garamond, serif;
-    font-size: 12pt;
-    line-height: 24pt;
+    font-weight: 200;
 }
 aside:not(:first-child)::before, aside:not(:last-child)::after {
     display: block;
@@ -179,13 +182,14 @@ aside:not(:first-child)::before, aside:not(:last-child)::after {
     width: 80%;
     content: "";
 }
-blockquote > footer:last-child {
+footer {
+    font-weight: 200;
     font-size: 12pt;
     line-height: 16pt;
     text-align: right;
 }
 blockquote > footer:last-child::before {
-    content: "– ";
+    content: "– ";
 }
 
 /*  BLOCK-LEVEL ELEMENTS  */
@@ -197,29 +201,41 @@ blockquote {
     margin: 18pt 12pt;
 }
 h1 {
-    margin: 36pt 0 36pt -72pt;
+    margin: 0 0 0 -72pt;
     font-size: 54pt;
-    font-weight: normal;
+    font-weight: inherit;
     line-height: 72pt;
     text-align: left;
 }
+@media (min-width: 384px) and (max-width: 576px) {
+    h1 {
+        margin: 0 0 0 -36pt;
+    }
+}
+@media (max-width: 384px) {
+    h1 {
+        margin: 0;
+    }
+}
 h2 {
-    margin: 18pt 0;
+    margin: 0 0 18pt;
     font-size: 24pt;
-    font-weight: normal;
+    font-weight: inherit;
     line-height: 36pt;
     text-align: center;
 }
 h2::before {
-    content: "☙ ";
+    content: "~ ";
 }
 h2::after {
-    content: " ❧";
+    content: " ~";
 }
 h3 {
     margin: 18pt 0 0;
     font-size: inherit;
+    font-weight: inherit;
     line-height: inherit;
+    text-align: left;
     text-decoration: underline;
 }
 h3::after {
@@ -246,14 +262,24 @@ hr::after {
     height: 18pt;
     text-align: center;
     white-space: pre;
-    content: "*  *  *"
+    content: "*   *   *"
 }
-iframe, img, figure {
+iframe, img, figure, svg {
     display: block;
-    margin: 0;
+    margin: auto;
     border: none;
     padding: 0;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
     max-width: 100%;
+}
+figcaption {
+    margin: 0;
+    font-weight: 200;
+    font-size: 12pt;
+    line-height: 16pt;
+    text-align: right;
 }
 figure {
     margin: 18pt auto;
@@ -274,18 +300,33 @@ p {
     position: relative;
     margin: 0;
     padding: 0;
+    text-align: justify;
 }
 h3 + p, p + p {
     text-indent: 24pt;
+}
+footer h3 + p, footer p + p {
+    margin-top: 12pt;
+    text-indent: 0;
 }
 p + p::before {
     position: absolute;
     top: 0;
     left: 6pt;
+    font-weight: 200;
     text-indent: 0;
     content: "¶";
 }
-blockquote p::before {
+footer p + p::before {
+    content: none;
+}
+blockquote p::before, blockquote p + p::before {
+    position: absolute;
+    top: 0;
+    left: auto;
+    right: 100%;
+    font-weight: 200;
+    text-indent: 0;
     content: open-quote;
 }
 blockquote p:not(:last-of-type)::after {
@@ -351,7 +392,7 @@ dt {
     float: left;
     margin: 0;
     padding: 0;
-    font-weight: normal;
+    font-weight: inherit;
 }
 dt + dt::before {
     content: ", "
@@ -363,10 +404,10 @@ dd {
 dd::before {
     display: inline;
     white-space: pre-wrap;
-    content: " : ";
+    content: " : ";
 }
 dd + dd::before {
-    content: "〃 : ";
+    content: "″ : ";
 }
 dd:after {
     display: block;
@@ -379,7 +420,7 @@ dd:after {
 /*  PHRASING ELEMENTS  */
 
 a[href] {
-    font-weight: normal;
+    font-weight: inherit;
     text-decoration: underline;
     -moz-text-decoration-style: dashed;
     text-decoration-style: dashed;
@@ -390,7 +431,7 @@ a[href] {
     }
 }
 b {
-    font-weight: normal;
+    font-weight: inherit;
 }
 b::before {
     content: "#";
@@ -409,10 +450,10 @@ del {
 }
 dfn {
     font-style: inherit;
-    font-weight: normal;
+    font-weight: inherit;
 }
 em {
-    font-style: normal;
+    font-style: inherit;
 }
 em::before, em::after {
     content: "~";
@@ -421,7 +462,7 @@ i {
     font-style: italic;
 }
 i[lang] {
-    font-style: normal;
+    font-style: inherit;
 }
 i[lang]::before {
     content: "«";
@@ -433,16 +474,15 @@ ins {
     text-decoration: underline;
 }
 small {
-    font-family: "EB Garamond 08pt", "EB Garamond 12pt", Garamond, serif;
-    font-size: 12pt;
-    font-weight: inherit;
-    line-height: 16pt;
+    font-size: inherit;
+    font-weight: 200;
+    line-height: inherit;
 }
 s {
     text-decoration: line-through;
 }
 strong {
-    font-weight: inherit;
+    font-weight: 400;
 }
 sub, sup {
     line-height: 0;
@@ -451,5 +491,6 @@ sup {
     text-transform: uppercase;
 }
 u {
+    font-weight: inherit;
     text-decoration: none;
 }
