@@ -215,31 +215,31 @@ html[data-colour="teal"] #alt-nav a[href]:hover {
 a[href]:not(:hover) {
     color: #3b3b3b;
 }
-a[href]:not([data-colour]):hover, *.colour, html *[data-colour] {
+a[href]:not([data-colour]):hover, *.colour, blockquote, dfn, html *[data-colour] {
     color: #636363;
 }
-html[data-colour="cyan"] a[href]:not([data-colour]):hover, html[data-colour="cyan"] *.colour, html *[data-colour="cyan"] {
+html[data-colour="cyan"] a[href]:not([data-colour]):hover, html[data-colour="cyan"] *.colour, html[data-colour="cyan"] blockquote, html[data-colour="cyan"] dfn, html *[data-colour="cyan"] {
     color: #31b9db;
 }
-html[data-colour="blue"] a[href]:not([data-colour]):hover, html[data-colour="blue"] *.colour, html *[data-colour="blue"] {
+html[data-colour="blue"] a[href]:not([data-colour]):hover, html[data-colour="blue"] *.colour, html[data-colour="blue"] blockquote, html[data-colour="blue"] dfn, html *[data-colour="blue"] {
     color: #7476fc;
 }
-html[data-colour="purple"] a[href]:not([data-colour]):hover, html[data-colour="purple"] *.colour, html *[data-colour="purple"] {
+html[data-colour="purple"] a[href]:not([data-colour]):hover, html[data-colour="purple"] *.colour, html[data-colour="purple"] blockquote, html[data-colour="purple"] dfn, html *[data-colour="purple"] {
     color: #c258f2;
 }
-html[data-colour="magenta"] a[href]:not([data-colour]):hover, html[data-colour="magenta"] *.colour, html *[data-colour="magenta"] {
+html[data-colour="magenta"] a[href]:not([data-colour]):hover, html[data-colour="magenta"] *.colour, html[data-colour="magenta"] blockquote, html[data-colour="magenta"] dfn, html *[data-colour="magenta"] {
     color: #e63ca4;
 }
-html[data-colour="red"] a[href]:not([data-colour]):hover, html[data-colour="red"] *.colour, html *[data-colour="red"] {
+html[data-colour="red"] a[href]:not([data-colour]):hover, html[data-colour="red"] *.colour, html[data-colour="red"] blockquote, html[data-colour="red"] dfn, html *[data-colour="red"] {
     color: #e83f2c;
 }
-html[data-colour="yellow"] a[href]:not([data-colour]):hover, html[data-colour="yellow"] *.colour, html *[data-colour="yellow"] {
+html[data-colour="yellow"] a[href]:not([data-colour]):hover, html[data-colour="yellow"] *.colour, html[data-colour="yellow"] blockquote, html[data-colour="yellow"] dfn, html *[data-colour="yellow"] {
     color: #f6d037;
 }
-html[data-colour="green"] a[href]:not([data-colour]):hover, html[data-colour="green"] *.colour, html *[data-colour="green"] {
+html[data-colour="green"] a[href]:not([data-colour]):hover, html[data-colour="green"] *.colour, html[data-colour="green"] blockquote, html[data-colour="green"] dfn, html *[data-colour="green"] {
     color: #6ad622;
 }
-html[data-colour="teal"] a[href]:not([data-colour]):hover, html[data-colour="teal"] *.colour, html *[data-colour="teal"] {
+html[data-colour="teal"] a[href]:not([data-colour]):hover, html[data-colour="teal"] *.colour, html[data-colour="teal"] blockquote, html[data-colour="teal"] dfn, html *[data-colour="teal"] {
     color: #49cfa2;
 }
 #global-footer {
@@ -272,7 +272,7 @@ html[data-colour="green"] p::before, html[data-colour="green"] p::after {
 html[data-colour="teal"] p::before, html[data-colour="teal"] p::after {
     color: #bdf0df;
 }
-h1, h2, h3, h4, h5, h6, hr, dt, dfn, blockquote, b, em {
+h1, h2, h3, h4, h5, h6, hr, dt, b, em {
     color: #3b3b3b;
 }
 code, strong, u {
