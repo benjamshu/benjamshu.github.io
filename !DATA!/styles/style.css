@@ -183,6 +183,7 @@ aside:not(:first-child)::before, aside:not(:last-child)::after {
     content: "";
 }
 footer {
+    margin-top: 18pt;
     font-weight: 200;
     font-size: 12pt;
     line-height: 16pt;
@@ -199,6 +200,7 @@ blockquote, h1, h2, h3, p {
 }
 blockquote {
     margin: 18pt 12pt;
+    font-weight: 200;
 }
 h1 {
     margin: 0 0 0 -72pt;
