@@ -1,0 +1,363 @@
+/*  @RULES  */
+
+/*  GLOBAL RULES  */
+
+*[title]:not([title=""]):not(a) {
+    border-bottom: dotted currentColor black;
+}
+
+@supports (text-decoration-style: dotted) or (-moz-text-decoration-style: dotted) or (-webkit-text-decoration-style: dotted) {
+    *[title]:not([title=""]):not(a) {
+        border: none;
+    }
+}
+
+/*  PAGE LAYOUT  */
+
+html {
+    margin: 0;
+    padding: 36pt;
+    overflow: auto;
+}
+
+@media (max-width: 192px) {
+    html {
+        padding: 36pt 0;
+    }
+}
+
+body {
+    margin: 0 auto 36pt;
+    padding: 0 72pt;
+    max-width: 432pt;
+}
+
+@media (min-width: 384px) and (max-width: 576px) {
+    body {
+        padding: 0 36pt;
+    }
+}
+
+@media (max-width: 384px) {
+    body {
+        padding: 0;
+    }
+}
+
+@media print {
+    body {
+        padding: 0 36pt;
+        max-width: none;
+    }
+}
+
+body::before, body::after, #global-nav::after {
+    display: block;
+    position: fixed;
+    right: 0;
+    left: 0;
+    height: 36pt;
+    z-index: 98;
+}
+
+body::before {
+    top: 0;
+}
+
+body::after {
+    bottom: 0;
+}
+
+/*  SECTIONING  */
+
+main, article, section, aside, nav, header, footer {
+    display: block;
+    clear: both;
+    margin: 0;
+    padding: 0;
+}
+
+main > header, main > section, main > nav,
+main > article:only-child > header, main > article:only-child > section, main > article:only-child > nav {
+    page-break-after: always;
+}
+
+aside {
+    font-weight: 200;
+}
+
+aside:not(:first-child)::before, aside:not(:last-child)::after {
+    display: block;
+    margin: 17.5pt auto;
+    border: .5pt currentColor solid;
+    padding: 0;
+    height: 0;
+    width: 80%;
+    content: "";
+}
+
+footer {
+    margin-top: 18pt;
+    font-weight: 200;
+    font-size: 12pt;
+    line-height: 16pt;
+    text-align: right;
+}
+
+blockquote > footer:last-child::before {
+    content: "– ";
+}
+
+header {
+    margin: 36pt 0 18pt;
+    border-image-width: 0 0 2pt;
+    border-image-slice: 100% 0;
+    padding: 0 0 16pt 0;
+}
+
+body > nav ~ main {
+    padding-top: 36pt;
+}
+
+nav, section {
+    margin: 18pt 0;
+}
+
+body > nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 0 12pt;
+    height: 36pt;
+    white-space: nowrap;
+    overflow: auto;
+    z-index: 99;
+}
+
+body > nav:not(.alts)::after {
+    top: 36pt;
+}
+
+body > nav.alts {
+    top: 36pt;
+    margin: 0;
+    padding: 0;
+}
+
+@media print {
+    body > nav {
+        display: none;
+    }
+}
+
+/*  TABLES  */
+
+/*  LISTS  */
+
+ul, ol, dl {
+    margin: 0;
+    padding: 0 0 0 24pt;
+}
+
+:not(li) > ul:only-child, :not(li) > ol:only-child, :not(li) > dl:only-child,
+h1 + ul:last-child, h1 + ol:last-child, h1 + dl:last-child,
+h2 + ul:last-child, h2 + ol:last-child, h2 + dl:last-child {
+    padding: 0;
+}
+
+ul {
+    list-style-type: circle;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+li ul {
+    list-style-type: square;
+}
+
+li li ul {
+    list-style-type: disc;
+}
+
+li li li ul {
+    list-style-type: circle;
+}
+
+li li li li ul {
+    list-style-type: square;
+}
+
+ol {
+    list-style-type: upper-roman;
+}
+
+li ol {
+    list-style-type: decimal-leading-zero;
+}
+
+li li ol {
+    list-style-type: lower-latin;
+}
+
+li li li ol {
+    list-style-type: lower-greek;
+}
+
+li li li li ol {
+    list-style-type: decimal;
+}
+
+dt {
+    display: inline;
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+
+dd {
+    margin: 0 0 0 24pt;
+    padding: 0;
+}
+
+dd::before {
+    display: inline;
+}
+
+dd:after {
+    display: block;
+    clear: both;
+    margin: 0;
+    padding: 0;
+}
+
+/*  BLOCK ELEMENTS  */
+
+blockquote, h1, h2, h3, p {
+    clear: both;
+}
+
+blockquote {
+    margin: 18pt 12pt;
+}
+
+figcaption {
+    margin: 0;
+}
+
+figure, iframe, img, svg {
+    display: block;
+    margin: auto;
+    border: none;
+    padding: 0;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    max-width: 100%;
+}
+
+figure {
+    margin: 18pt auto;
+}
+
+h1 {
+    margin: 0 0 0 -72pt;
+}
+
+@media (min-width: 384px) and (max-width: 576px) {
+    h1 {
+        margin: 0 0 0 -36pt;
+    }
+}
+
+@media (max-width: 384px) {
+    h1 {
+        margin: 0;
+    }
+}
+
+h2 {
+    margin: 0 0 18pt;
+}
+
+h3 {
+    margin: 18pt 0 0;
+}
+
+hr {
+    display: block;
+    position: relative;
+    margin: 0;
+    border: none;
+    padding: 0;
+    width: 100%;
+    height: 36pt;
+    overflow: hidden;
+}
+
+hr::after {
+    display: block;
+    position: absolute;
+    top: 9pt;
+    left: 0;
+    right: 0;
+    height: 18pt;
+}
+
+h1 img, h2 img, h3 img, h4 img, h5 img, h6 img, p img, li img, dt img, dd img, pre img, blockquote img,
+h1 svg, h2 svg, h3 svg, h4 svg, h5 svg, h6 svg, p svg, li svg, dt svg, dd svg, pre svg, blockquote svg {
+    display: inline-block;
+    margin: 0;
+    border: none;
+    padding: 0;
+    max-height: 1em;
+    max-width: none;
+    width: auto;
+    vertical-align: text-bottom;
+}
+
+p {
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+footer h3 + p, footer p + p {
+    margin-top: 12pt;
+}
+
+p + p::before {
+    position: absolute;
+    top: 0;
+    left: 6pt;
+}
+
+blockquote p::before, blockquote p + p::before {
+    position: absolute;
+    top: 0;
+    left: auto;
+    right: 100%;
+}
+
+/*  PHRASING  */
+
+body > nav a[href] {
+    display: inline-block;
+    margin: 0;
+    padding: 6pt 18pt;
+}
+
+body > nav.alts a[href] {
+    margin: 0 1.5pt;
+    border-radius: 2pt;
+    padding: 2pt 3pt;
+}
+
+@supports (text-decoration-style: dotted) or (-moz-text-decoration-style: dotted) or (-webkit-text-decoration-style: dotted) {
+    abbr {
+        border: none;
+    }
+}

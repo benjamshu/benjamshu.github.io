@@ -15,7 +15,6 @@ function loadSnippets() {
         var i;
         snippet = this.responseXML.getElementById("global-nav");
         clone = document.createElement("NAV");
-        clone.id = "global-nav";
         for (i = 0; i < snippet.childElementCount; i++) {
             if (snippet.children.item(i).lang == document.documentElement.lang) {
                 clone.appendChild(document.importNode(snippet.children.item(i), true));
@@ -36,9 +35,9 @@ function displayAltLinks() {
     if (!document.getElementById("alts")) return;
     alts = document.getElementById("alts").text.split(/\s*\n\s*/g);
     altnav = document.createElement("NAV");
-    altnav.id = "alt-nav";
+    altnav.className = "alts";
     alt = document.createElement("A");
-    alt.id = "alt-current";
+    alt.className = "alts-current";
     alt.href = document.location.href;
     alt.hreflang = document.documentElement.lang;
     alt.textContent = document.documentElement.lang.toUpperCase();

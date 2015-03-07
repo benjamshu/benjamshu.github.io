@@ -1,27 +1,109 @@
-/*  BODY TEXT  */
-@import url('../fonts/Source%20Sans%20Pro/source-sans-pro.css');
+/*  @RULES  */
 
-/*  HEADER TEXT  */
-@font-face {
-    font-family: 'Neris';
-    src: url('../fonts/Neris/Neris-Light-webfont.eot');
-    src: url('../fonts/Neris/Neris-Light-webfont.woff') format('woff'),
-         url('../fonts/Neris/Neris-Light-webfont.eot') format('embedded-opentype');
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,300italic,400italic,200italic,200&subset=latin,latin-ext,vietnamese);
+
+/*  GLOBAL RULES  */
+
+*:root {
+    font-family: 'Source Sans Pro', 'News Gothic', sans-serif;
     font-weight: 300;
-    font-style: normal;
+    font-size: 18pt;
+    font-synthesis: none;
+    font-feature-settings: "liga", "clig", "dlig", "calt", "cv04", "cv05";
 }
-@font-face {
-    font-family: 'Neris';
-    src: url('../fonts/Neris/Neris-LightItalic-webfont.eot');
-    src: url('../fonts/Neris/Neris-LightItalic-webfont.woff') format('woff'),
-         url('../fonts/Neris/Neris-LightItalic-webfont.eot') format('embedded-opentype');
-    font-weight: 300;
+
+@media print {
+    *:root {
+        font-size: 12pt;
+    }
+}
+
+/*  PAGE LAYOUT  */
+
+/*  SECTIONING  */
+
+body > nav:not(.alts) {
+    font-size: 12pt;
+}
+
+/*  TABLES  */
+
+/*  LISTS  */
+
+dt {
+    font-weight: inherit;
+}
+
+/*  BLOCK ELEMENTS  */
+
+blockquote {
+    font-weight: 200;
+}
+
+figcaption {
+    font-weight: 200;
+    font-size: 12pt;
+}
+
+h1 {
+    font-size: 54pt;
+    font-weight: inherit;
+}
+
+h2 {
+    font-size: 24pt;
+    font-weight: inherit;
+}
+
+h3 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+p::before {
+    font-weight: 200;
+}
+
+/*  PHRASING  */
+
+body > nav.alts a[href] {
+    font-size: 12pt;
+}
+
+b {
+    font-weight: inherit;
+}
+
+cite {
+    font-style: inherit;
+}
+
+code {
+    font-family: inherit;
+}
+
+dfn {
+    font-style: inherit;
+    font-weight: inherit;
+}
+
+em {
+    font-style: inherit;
+}
+
+i {
     font-style: italic;
 }
 
-:root {
-    font-family: 'Source Sans Pro', 'News Gothic', sans-serif;
+i[lang] {
+    font-style: inherit;
 }
-h1, h2, header {
-    font-family: 'Neris', 'News Gothic', sans-serif;
+
+small {
+    font-size: inherit;
+    font-weight: 200;
+}
+
+strong {
+    font-weight: 400;
 }

@@ -1,0 +1,236 @@
+/*  @RULES  */
+
+/*  GLOBAL RULES  */
+
+*[title]:not([title=""]):not(a) {
+    cursor: help;
+}
+
+@supports (text-decoration-style: dotted) or (-moz-text-decoration-style: dotted) or (-webkit-text-decoration-style: dotted) {
+    *[title]:not([title=""]):not(a) {
+        -webkit-text-decoration-line: underline;
+        -webkit-text-decoration-style: dotted;
+        -moz-text-decoration-line: underline;
+        -moz-text-decoration-style: dotted;
+        text-decoration-line: underline;
+        text-decoration-style: dotted;
+    }
+}
+
+*:lang(en) {
+    quotes: "“" "”" "‘" "’";
+}
+
+*:lang(*-fonipa) {
+    font-feature-settings: "liga", "clig", "dlig", "calt", "cv04", "cv05", "ss06";
+}
+
+*:root {
+    line-height: 24pt;
+    text-align: justify;
+    quotes: "“" "”" "‘" "’";
+}
+
+@media print {
+    *:root {
+        line-height: 16pt;
+    }
+}
+
+/*  PAGE LAYOUT  */
+
+body::before, body::after, #global-nav::after {
+    content: "";
+}
+
+@media print {
+    body::before, body::after {
+        content: none;
+    }
+}
+
+/*  SECTIONING  */
+
+body > nav {
+    text-align: center;
+}
+
+body > nav:not(.alts)::after {
+    content: "";
+}
+
+body > nav.alts {
+    text-align: right;
+}
+
+/*  TABLES  */
+
+/*  LISTS  */
+
+ul, ol, dl {
+    text-align: left;
+}
+
+dt + dt::before {
+    content: ", "
+}
+
+dd::before {
+    white-space: pre-wrap;
+    content: " : ";
+}
+
+dd + dd::before {
+    content: "″ : ";
+}
+
+dd::after {
+    content: "";
+}
+
+/*  BLOCK ELEMENTS  */
+
+figcaption {
+    line-height: 16pt;
+    text-align: right;
+}
+
+h1 {
+    line-height: 72pt;
+    text-align: left;
+}
+
+h2 {
+    line-height: 36pt;
+    text-align: center;
+}
+
+h2::before {
+    content: "~ ";
+}
+
+h2::after {
+    content: " ~";
+}
+
+h3 {
+    line-height: inherit;
+    text-align: left;
+    text-decoration: underline;
+}
+
+h3::after {
+    content: ":";
+}
+
+hr::after {
+    text-align: center;
+    white-space: pre;
+    content: "*   *   *";
+}
+
+p {
+    text-align: justify;
+}
+
+h3 + p, p + p {
+    text-indent: 24pt;
+}
+
+footer h3 + p, footer p + p {
+    text-indent: 0;
+}
+
+p::before {
+    text-indent: 0;
+}
+
+p + p::before {
+    content: "¶";
+}
+
+blockquote p::before, blockquote p + p::before {
+    content: open-quote;
+}
+
+blockquote p:not(:last-of-type)::after {
+    content: no-close-quote;
+}
+
+blockquote p:last-of-type::after {
+    content: close-quote;
+}
+
+footer p + p::before {
+    content: none;
+}
+
+/*  PHRASING  */
+
+a[href] {
+    text-decoration: underline;
+    -moz-text-decoration-style: dashed;
+    text-decoration-style: dashed;
+}
+
+@media print {
+    a[href] {
+        text-decoration: none;
+    }
+}
+
+body > nav a[href] {
+    text-decoration: none;
+}
+
+body > nav.alts a[href] {
+    line-height: 16pt;
+}
+
+b::before {
+    content: "#";
+}
+
+code::before, code::after {
+    content: "'";
+}
+
+del {
+    text-decoration: line-through;
+}
+
+em::before, em::after {
+    content: "~";
+}
+
+i[lang]::before {
+    content: "«";
+}
+
+i[lang]::after {
+    content: "»";
+}
+
+ins {
+    text-decoration: underline;
+}
+
+s {
+    text-decoration: line-through;
+}
+
+small {
+    line-height: inherit;
+}
+
+sub, sup {
+    line-height: 0;
+}
+
+sup {
+    text-transform: uppercase;
+}
+
+u {
+    text-decoration: none;
+}

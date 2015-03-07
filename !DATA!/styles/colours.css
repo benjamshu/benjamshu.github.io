@@ -9,17 +9,140 @@
     - PURPLE : Gendre + Race + Identity
     - MAGENTA : Narrative
 */
+
+/*  @RULES  */
+
+/*  GLOBAL RULES  */
+
 * {
     transition: color .25s;
     border-color: inherit;
 }
+
 *:root h2 *, *:root h3 *, *:root h4 *, *:root h5 *, *:root h6 *, *:root hr *, *:root dt *, *:root dfn *, *:root blockquote *, *:root a[href] * {
     color: inherit;
 }
+
 *:root {
     color: #636363;
 }
-header {
+
+@media print {
+    *:root {
+        color: black;
+    }
+}
+
+html *.colour, blockquote, dfn, *:root *[data-colour] {
+    color: #636363;
+}
+html[data-colour="cyan"] *.colour, *:root *[data-colour="cyan"] {
+    color: #31b9db;
+}
+html[data-colour="blue"] *.colour, *:root *[data-colour="blue"] {
+    color: #7476fc;
+}
+html[data-colour="purple"] *.colour, *:root *[data-colour="purple"] {
+    color: #c258f2;
+}
+html[data-colour="magenta"] *.colour, *:root *[data-colour="magenta"] {
+    color: #e63ca4;
+}
+html[data-colour="red"] *.colour, *:root *[data-colour="red"] {
+    color: #e83f2c;
+}
+html[data-colour="yellow"] *.colour, *:root *[data-colour="yellow"] {
+    color: #f6d037;
+}
+html[data-colour="green"] *.colour, *:root *[data-colour="green"] {
+    color: #6ad622;
+}
+html[data-colour="teal"] *.colour, *:root *[data-colour="teal"] {
+    color: #49cfa2;
+}
+
+html *::selection, *:root *[data-colour]::selection {
+    background: #cccccc;
+}
+html[data-colour] *::-moz-selection, *:root *[data-colour]::-moz-selection {
+    background: #cccccc;
+}
+html[data-colour="cyan"] *::selection, *:root *[data-colour="cyan"]::selection {
+    background: #bfe7f2;
+}
+html[data-colour="cyan"] *::-moz-selection, *:root *[data-colour="cyan"]::-moz-selection {
+    background: #bfe7f2;
+}
+html[data-colour="blue"] *::selection, *:root *[data-colour="blue"]::selection {
+    background: #d0d1f6;
+}
+html[data-colour="blue"] *::-moz-selection, *:root *[data-colour="blue"]::-moz-selection {
+    background: #d0d1f6;
+}
+html[data-colour="purple"] *::selection, *:root *[data-colour="purple"]::selection {
+    background: #eabdff;
+}
+html[data-colour="purple"] *::-moz-selection, *:root *[data-colour="purple"]::-moz-selection {
+    background: #eabdff;
+}
+html[data-colour="magenta"] *::selection, *:root *[data-colour="magenta"]::selection {
+    background: #f0b2d8;
+}
+html[data-colour="magenta"] *::-moz-selection, *:root *[data-colour="magenta"]::-moz-selection {
+    background: #f0b2d8;
+}
+html[data-colour="red"] *::selection, *:root *[data-colour="red"]::selection {
+    background: #f9a59b;
+}
+html[data-colour="red"] *::-moz-selection, *:root *[data-colour="red"]::-moz-selection {
+    background: #f9a59b;
+}
+html[data-colour="yellow"] *::selection, *:root *[data-colour="yellow"]::selection {
+    background: #fcf0be;
+}
+html[data-colour="yellow"] *::-moz-selection, *:root *[data-colour="yellow"]::-moz-selection {
+    background: #fcf0be;
+}
+html[data-colour="green"] *::selection, *:root *[data-colour="green"]::selection {
+    background: #d5fcbb;
+}
+html[data-colour="green"] *::-moz-selection, *:root *[data-colour="green"]::-moz-selection {
+    background: #d5fcbb;
+}
+html[data-colour="teal"] *::selection, *:root *[data-colour="teal"]::selection {
+    background: #bdf0df;
+}
+html[data-colour="teal"] *::-moz-selection, *:root *[data-colour="teal"]::-moz-selection {
+    background: #bdf0df;
+}
+
+/*  PAGE LAYOUT  */
+
+html {
+    background: #f5f5f5;
+}
+
+@media print {
+    html {
+        background: white;
+    }
+}
+
+body::before {
+    background: linear-gradient(to bottom, rgb(245, 245, 245), rgba(245, 245, 245, 0));
+}
+
+body::after {
+    background: linear-gradient(to top, rgb(245, 245, 245), rgba(245, 245, 245, 0));
+}
+
+/*  SECTIONING  */
+
+aside {
+    color: #a3a3a3;
+}
+
+html header {
     border-image-source: linear-gradient(to right, #636363, #0c0c0c);
 }
 html[data-colour="cyan"] header {
@@ -46,206 +169,76 @@ html[data-colour="green"] header {
 html[data-colour="teal"] header {
     border-image-source: linear-gradient(to right, #49cfa2, #0c0c0c);
 }
-html::selection, *:root *[data-colour]::selection, *:root mark[data-colour], mark {
-    background: #cccccc;
-}
-html::-moz-selection, *:root *[data-colour]::-moz-selection, *:root mark[data-colour], mark {
-    background: #cccccc;
-}
-*::selection {
-    background: #cccccc;
-}
-*::-moz-selection {
-    background: #cccccc;
-}
-*:root *[data-colour="cyan"]::selection, *:root mark[data-colour="cyan"], html[data-colour="cyan"] mark {
-    background: #bfe7f2;
-}
-*:root *[data-colour="cyan"]::-moz-selection, *:root mark[data-colour="cyan"], html[data-colour="cyan"] mark {
-    background: #bfe7f2;
-}
-html[data-colour="cyan"] *::selection {
-    background: #bfe7f2;
-}
-html[data-colour="cyan"] *::-moz-selection {
-    background: #bfe7f2;
-}
-*:root *[data-colour="blue"]::selection, *:root mark[data-colour="blue"], html[data-colour="blue"] mark {
-    background: #d0d1f6;
-}
-*:root *[data-colour="blue"]::-moz-selection, *:root mark[data-colour="blue"], html[data-colour="blue"] mark {
-    background: #d0d1f6;
-}
-html[data-colour="blue"] *::selection {
-    background: #d0d1f6;
-}
-html[data-colour="blue"] *::-moz-selection {
-    background: #d0d1f6;
-}
-*:root *[data-colour="purple"]::selection, *:root mark[data-colour="purple"], html[data-colour="purple"] mark {
-    background: #eabdff;
-}
-*:root *[data-colour="purple"]::-moz-selection, *:root mark[data-colour="purple"], html[data-colour="purple"] mark {
-    background: #eabdff;
-}
-html[data-colour="purple"] *::selection {
-    background: #eabdff;
-}
-html[data-colour="purple"] *::-moz-selection {
-    background: #eabdff;
-}
-*:root *[data-colour="magenta"]::selection, *:root mark[data-colour="magenta"], html[data-colour="magenta"] mark {
-    background: #f0b2d8;
-}
-*:root *[data-colour="magenta"]::-moz-selection, *:root mark[data-colour="magenta"], html[data-colour="magenta"] mark {
-    background: #f0b2d8;
-}
-html[data-colour="magenta"] *::selection {
-    background: #f0b2d8;
-}
-html[data-colour="magenta"] *::-moz-selection {
-    background: #f0b2d8;
-}
-*:root *[data-colour="red"]::selection, *:root mark[data-colour="red"], html[data-colour="red"] mark {
-    background: #f9a59b;
-}
-*:root *[data-colour="red"]::-moz-selection, *:root mark[data-colour="red"], html[data-colour="red"] mark {
-    background: #f9a59b;
-}
-html[data-colour="red"] *::selection {
-    background: #f9a59b;
-}
-html[data-colour="red"] *::-moz-selection {
-    background: #f9a59b;
-}
-*:root *[data-colour="yellow"]::selection, *:root mark[data-colour="yellow"], html[data-colour="yellow"] mark {
-    background: #fcf0be;
-}
-*:root *[data-colour="yellow"]::-moz-selection, *:root mark[data-colour="yellow"], html[data-colour="yellow"] mark {
-    background: #fcf0be;
-}
-html[data-colour="yellow"] *::selection {
-    background: #fcf0be;
-}
-html[data-colour="yellow"] *::-moz-selection {
-    background: #fcf0be;
-}
-*:root *[data-colour="green"]::selection, *:root mark[data-colour="green"], html[data-colour="green"] mark {
-    background: #d5fcbb;
-}
-*:root *[data-colour="green"]::-moz-selection, *:root mark[data-colour="green"], html[data-colour="green"] mark {
-    background: #d5fcbb;
-}
-html[data-colour="green"] *::selection {
-    background: #d5fcbb;
-}
-html[data-colour="green"] *::-moz-selection {
-    background: #d5fcbb;
-}
-*:root *[data-colour="teal"]::selection, *:root mark[data-colour="teal"], html[data-colour="teal"] mark {
-    background: #bdf0df;
-}
-*:root *[data-colour="teal"]::-moz-selection, *:root mark[data-colour="teal"], html[data-colour="teal"] mark {
-    background: #bdf0df;
-}
-html[data-colour="teal"] *::selection {
-    background: #bdf0df;
-}
-html[data-colour="teal"] *::-moz-selection {
-    background: #bdf0df;
-}
-html {
-    background: #f5f5f5;
-}
-body::before, #global-nav::after {
-    background: linear-gradient(to bottom, rgb(245, 245, 245), rgba(245, 245, 245, 0));
-}
-body::after {
-    background: linear-gradient(to top, rgb(245, 245, 245), rgba(245, 245, 245, 0));
-}
-#global-nav {
+
+body > nav:not(.alts) {
     color: #f5f5f5;
     background: #3b3b3b;
 }
-#global-nav a[href] {
-    color: inherit;
-    background: transparent;
-    transition: color .5s, background .5s;
+
+body > nav::after {
+    background: linear-gradient(to bottom, rgb(245, 245, 245), rgba(245, 245, 245, 0));
 }
-#global-nav a[href]:hover {
+
+/*  TABLES  */
+
+/*  LISTS  */
+
+dt {
     color: #3b3b3b;
-    background: #f5f5f5;
 }
-#alt-nav a[href] {
+
+/*  BLOCK ELEMENTS  */
+
+b, em, h1, h2, h3, h4, h5, h6, hr {
+    color: #3b3b3b;
+}
+
+code, strong, u {
+    color: #1c1c1c;
+}
+
+del, s, small {
     color: #a3a3a3;
-    background: transparent;
-    transition: color .5s, background .5s;
 }
-#alt-nav a[href]#alt-current:not(:hover) {
-    color: #3b3b3b;
-}
-#alt-nav a[href]:hover {
-    color: #f5f5f5;
-    background: #636363;
-}
-html[data-colour="cyan"] #alt-nav a[href]:hover {
-    background: #31b9db;
-}
-html[data-colour="blue"] #alt-nav a[href]:hover {
-    background: #7476fc;
-}
-html[data-colour="purple"] #alt-nav a[href]:hover {
-    background: #c258f2;
-}
-html[data-colour="magenta"] #alt-nav a[href]:hover {
-    background: #e63ca4;
-}
-html[data-colour="red"] #alt-nav a[href]:hover {
-    background: #e83f2c;
-}
-html[data-colour="yellow"] #alt-nav a[href]:hover {
-    background: #f6d037;
-}
-html[data-colour="green"] #alt-nav a[href]:hover {
-    background: #6ad622;
-}
-html[data-colour="teal"] #alt-nav a[href]:hover {
-    background: #49cfa2;
-}
-a[href]:not(:hover) {
-    color: #3b3b3b;
-}
-a[href]:not([data-colour]):hover, *.colour, blockquote, dfn, html *[data-colour] {
+
+html blockquote {
     color: #636363;
 }
-html[data-colour="cyan"] a[href]:not([data-colour]):hover, html[data-colour="cyan"] *.colour, html[data-colour="cyan"] blockquote, html[data-colour="cyan"] dfn, html *[data-colour="cyan"] {
+html[data-colour="cyan"] blockquote {
     color: #31b9db;
 }
-html[data-colour="blue"] a[href]:not([data-colour]):hover, html[data-colour="blue"] *.colour, html[data-colour="blue"] blockquote, html[data-colour="blue"] dfn, html *[data-colour="blue"] {
+html[data-colour="blue"] blockquote {
     color: #7476fc;
 }
-html[data-colour="purple"] a[href]:not([data-colour]):hover, html[data-colour="purple"] *.colour, html[data-colour="purple"] blockquote, html[data-colour="purple"] dfn, html *[data-colour="purple"] {
+html[data-colour="purple"] blockquote {
     color: #c258f2;
 }
-html[data-colour="magenta"] a[href]:not([data-colour]):hover, html[data-colour="magenta"] *.colour, html[data-colour="magenta"] blockquote, html[data-colour="magenta"] dfn, html *[data-colour="magenta"] {
+html[data-colour="magenta"] blockquote {
     color: #e63ca4;
 }
-html[data-colour="red"] a[href]:not([data-colour]):hover, html[data-colour="red"] *.colour, html[data-colour="red"] blockquote, html[data-colour="red"] dfn, html *[data-colour="red"] {
+html[data-colour="red"] blockquote {
     color: #e83f2c;
 }
-html[data-colour="yellow"] a[href]:not([data-colour]):hover, html[data-colour="yellow"] *.colour, html[data-colour="yellow"] blockquote, html[data-colour="yellow"] dfn, html *[data-colour="yellow"] {
+html[data-colour="yellow"] blockquote {
     color: #f6d037;
 }
-html[data-colour="green"] a[href]:not([data-colour]):hover, html[data-colour="green"] *.colour, html[data-colour="green"] blockquote, html[data-colour="green"] dfn, html *[data-colour="green"] {
+html[data-colour="green"] blockquote {
     color: #6ad622;
 }
-html[data-colour="teal"] a[href]:not([data-colour]):hover, html[data-colour="teal"] *.colour, html[data-colour="teal"] blockquote, html[data-colour="teal"] dfn, html *[data-colour="teal"] {
+html[data-colour="teal"] blockquote {
     color: #49cfa2;
 }
-#global-footer {
-    color: #a3a3a3;
+
+figure, iframe, img, svg {
+    color: inherit;
 }
-p::before, p::after {
+
+hr {
+    color: inherit;
+    background: none;
+}
+
+html p::before, html p::after {
     color: #cccccc;
 }
 html[data-colour="cyan"] p::before, html[data-colour="cyan"] p::after {
@@ -272,20 +265,113 @@ html[data-colour="green"] p::before, html[data-colour="green"] p::after {
 html[data-colour="teal"] p::before, html[data-colour="teal"] p::after {
     color: #bdf0df;
 }
-h1, h2, h3, h4, h5, h6, hr, dt, b, em {
+
+/*  PHRASING  */
+
+a[href]:not(:hover) {
     color: #3b3b3b;
 }
-code, strong, u {
-    color: #1c1c1c;
+
+html a[href]:not([data-colour]):hover, *.colour, blockquote, dfn, html *[data-colour] {
+    color: #636363;
 }
-aside, small, s, del {
+html[data-colour="cyan"] a[href]:not([data-colour]):hover, html[data-colour="cyan"] dfn {
+    color: #31b9db;
+}
+html[data-colour="blue"] a[href]:not([data-colour]):hover, html[data-colour="blue"] dfn {
+    color: #7476fc;
+}
+html[data-colour="purple"] a[href]:not([data-colour]):hover, html[data-colour="purple"] dfn {
+    color: #c258f2;
+}
+html[data-colour="magenta"] a[href]:not([data-colour]):hover, html[data-colour="magenta"] dfn {
+    color: #e63ca4;
+}
+html[data-colour="red"] a[href]:not([data-colour]):hover, html[data-colour="red"] dfn {
+    color: #e83f2c;
+}
+html[data-colour="yellow"] a[href]:not([data-colour]):hover, html[data-colour="yellow"] dfn {
+    color: #f6d037;
+}
+html[data-colour="green"] a[href]:not([data-colour]):hover, html[data-colour="green"] dfn {
+    color: #6ad622;
+}
+html[data-colour="teal"] a[href]:not([data-colour]):hover, html[data-colour="teal"] dfn {
+    color: #49cfa2;
+}
+
+*:root body > nav a[href] {
+    color: inherit;
+    background: transparent;
+    transition: color .5s, background .5s;
+}
+
+*:root body > nav a[href]:not([data-colour]):hover {
+    color: #3b3b3b;
+    background: #f5f5f5;
+}
+
+body > nav.alts a[href] {
     color: #a3a3a3;
 }
-@media print {
-    *:root {
-        color: black;
-    }
-    html, #global-nav, #global-footer {
-        background: white;
-    }
+
+body > nav.alts a[href].alts-current:not(:hover) {
+    color: #3b3b3b;
+}
+
+html body > nav.alts a[href]:not([data-colour]):hover {
+    color: #f5f5f5;
+    background: #636363;
+}
+html[data-colour="cyan"] body > nav.alts a[href]:not([data-colour]):hover {
+    background: #31b9db;
+}
+html[data-colour="blue"] body > nav.alts a[href]:not([data-colour]):hover {
+    background: #7476fc;
+}
+html[data-colour="purple"] body > nav.alts a[href]:not([data-colour]):hover {
+    background: #c258f2;
+}
+html[data-colour="magenta"] body > nav.alts a[href]:not([data-colour]):hover {
+    background: #e63ca4;
+}
+html[data-colour="red"] body > nav.alts a[href]:not([data-colour]):hover {
+    background: #e83f2c;
+}
+html[data-colour="yellow"] body > nav.alts a[href]:not([data-colour]):hover {
+    background: #f6d037;
+}
+html[data-colour="green"] body > nav.alts a[href]:not([data-colour]):hover {
+    background: #6ad622;
+}
+html[data-colour="teal"] body > nav.alts a[href]:not([data-colour]):hover {
+    background: #49cfa2;
+}
+
+html mark, *:root mark[data-colour] {
+    background: #cccccc;
+}
+html[data-colour="cyan"] mark, *:root mark[data-colour="cyan"] {
+    background: #bfe7f2;
+}
+html[data-colour="blue"] mark, *:root mark[data-colour="blue"] {
+    background: #d0d1f6;
+}
+html[data-colour="purple"] mark, *:root mark[data-colour="purple"] {
+    background: #eabdff;
+}
+html[data-colour="magenta"] mark, *:root mark[data-colour="magenta"] {
+    background: #f0b2d8;
+}
+html[data-colour="red"] mark, *:root mark[data-colour="red"] {
+    background: #f9a59b;
+}
+html[data-colour="yellow"] mark, *:root mark[data-colour="yellow"] {
+    background: #fcf0be;
+}
+html[data-colour="green"] mark, *:root mark[data-colour="green"] {
+    background: #d5fcbb;
+}
+html[data-colour="teal"] mark, *:root mark[data-colour="teal"] {
+    background: #bdf0df;
 }
