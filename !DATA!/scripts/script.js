@@ -122,9 +122,8 @@ function init() {
     checkLinks();
 
     //  export-js
-    var footer = document.createElement("FOOTER");
-    Export.init(footer);
-    document.getElementsByTagName("MAIN").item(0).appendChild(footer);
+    document.getElementsByTagName("MAIN").item(0).appendChild(
+    Export.init(document.createElement("FOOTER")));
     document.styleSheets.item(0).insertRule("@media print{main > footer:last-child {display: none;}}", document.styleSheets.item(0).cssRules.length);
 
     displayAltLinks();
@@ -153,7 +152,7 @@ function loadScripts() {
         tag.addEventListener("load", scriptLoaded, false);
         tag.type = "text/javascript";
         tag.src = scripts[i];
-        document.head.insertBefore(tag, document.scripts.item(0));
+        document.scripts.item(0).parentNode.insertBefore(tag, document.scripts.item(0));
     }
 }
 
