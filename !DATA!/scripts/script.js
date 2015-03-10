@@ -6,6 +6,11 @@ var current_scroll_hash = "#";
 var should_push_state = false;
 var Request = new XMLHttpRequest();
 
+var scripts = [
+    "http://home.benjam.xyz/scripts/export-js/export.js"
+]
+var scripts_loaded = 0;
+
 function loadSnippets() {
     Request.open("get", "/!DATA!/snippets/snippets.html", true);
     Request.responseType = "document";
@@ -110,15 +115,45 @@ function checkLinks() {
 }
 
 function init() {
+
     loadSnippets();
+
     checkLinks();
+
+    //  export-js
+    var footer = document.createElement("FOOTER");
+    Export.init(footer);
+    document.getElementsByTagName("MAIN").item(0).appendChild(footer);
+    document.styleSheets.item(0).insertRule("@media print{main > footer:last-child {display: none;}}", document.styleSheets.item(0).cssRules.length);
+
     displayAltLinks();
+
     var hashLinks = document.querySelectorAll('a[href^="#"]');
+
     for (var i = 0; i < hashLinks.length; i++) {
         hashLinks.item(i).addEventListener("click", navHashFromLink, false);
     }
+
     navHashFromLocation();
+    window.addEventListener("popstate", navHashFromLocation, false);
+
 }
 
-document.addEventListener("DOMContentLoaded", init, false);
-window.addEventListener("popstate", navHashFromLocation, false);
+function scriptLoaded() {
+    scripts_loaded |= (1 << scripts.indexOf(this.src));
+    if (scripts_loaded === ~(~0 << scripts.length)) init();
+}
+
+function loadScripts() {
+    var i;
+    var tag;
+    for (i = 0; i < scripts.length; i++) {
+        tag = document.createElement('script');
+        tag.addEventListener("load", scriptLoaded, false);
+        tag.type = "text/javascript";
+        tag.src = scripts[i];
+        document.head.insertBefore(tag, document.scripts.item(0));
+    }
+}
+
+document.addEventListener("DOMContentLoaded", loadScripts, false);
