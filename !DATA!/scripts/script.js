@@ -1,4 +1,5 @@
 /* jslint asi:true, browser:true */
+/* global Export */
 
 var current_scroll_target = 0;
 var current_scroll_velocity = 0;
@@ -7,7 +8,7 @@ var should_push_state = false;
 var Request = new XMLHttpRequest();
 
 var scripts = [
-    "http://home.benjam.xyz/scripts/export-js/export.js"
+    "http://home.benjam.xyz/!DATA!/scripts/export-js/export.js"
 ]
 var scripts_loaded = 0;
 
