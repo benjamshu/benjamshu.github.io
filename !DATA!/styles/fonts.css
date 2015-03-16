@@ -18,6 +18,10 @@
     }
 }
 
+*:lang(*-fonipa) {
+    font-feature-settings: "liga", "clig", "dlig", "calt", "cv04", "cv05", "ss06";
+}
+
 /*  PAGE LAYOUT  */
 
 /*  SECTIONING  */

@@ -21,10 +21,6 @@
     quotes: "“" "”" "‘" "’";
 }
 
-*:lang(*-fonipa) {
-    font-feature-settings: "liga", "clig", "dlig", "calt", "cv04", "cv05", "ss06";
-}
-
 *:root {
     line-height: 24pt;
     text-align: justify;
