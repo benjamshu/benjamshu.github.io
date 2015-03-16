@@ -12,26 +12,6 @@ var scripts = [
 ]
 var scripts_loaded = 0;
 
-function loadSnippets() {
-    Request.open("get", "/!DATA!/snippets/snippets.html", true);
-    Request.responseType = "document";
-    Request.addEventListener("load", function(){
-        var snippet;
-        var clone;
-        var i;
-        snippet = this.responseXML.getElementById("global-nav");
-        clone = document.createElement("NAV");
-        for (i = 0; i < snippet.childElementCount; i++) {
-            if (snippet.children.item(i).lang == document.documentElement.lang) {
-                clone.appendChild(document.importNode(snippet.children.item(i), true));
-                break;
-            }
-        }
-        if (clone.childElementCount !== 0) document.body.insertBefore(clone, document.body.firstElementChild);
-    }, false);
-    Request.send();
-}
-
 function displayAltLinks() {
     var i;
     var j;
@@ -116,8 +96,6 @@ function checkLinks() {
 }
 
 function init() {
-
-    loadSnippets();
 
     checkLinks();
 
