@@ -6,7 +6,7 @@
     border-bottom: dotted currentColor black;
 }
 
-@supports (text-decoration-style: dotted) or (-moz-text-decoration-style: dotted) or (-webkit-text-decoration-style: dotted) {
+@supports (text-decoration-style: dotted) {
     *[title]:not([title=""]):not(a) {
         border: none;
     }
@@ -16,42 +16,17 @@
 
 html {
     margin: 0;
-    padding: 36pt;
+    padding: 36pt 30pt;
     overflow: auto;
 }
 
-@media (max-width: 192px) {
-    html {
-        padding: 36pt 0;
-    }
-}
-
 body {
-    margin: 0 auto 36pt;
-    padding: 0 72pt;
-    max-width: 432pt;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 510pt;
 }
 
-@media (min-width: 384px) and (max-width: 576px) {
-    body {
-        padding: 0 36pt;
-    }
-}
-
-@media (max-width: 384px) {
-    body {
-        padding: 0;
-    }
-}
-
-@media print {
-    body {
-        padding: 0 36pt;
-        max-width: none;
-    }
-}
-
-body::before, body::after, #global-nav::after {
+body::before, body::after {
     display: block;
     position: fixed;
     right: 0;
@@ -77,31 +52,12 @@ main, article, section, aside, nav, header, footer {
     padding: 0;
 }
 
-main > header, main > section, main > nav,
-main > article:only-child > header, main > article:only-child > section, main > article:only-child > nav {
-    page-break-after: always;
-}
-
-aside {
-    font-weight: 200;
-}
-
-aside:not(:first-child)::before, aside:not(:last-child)::after {
-    display: block;
-    margin: 17.5pt auto;
-    border: .5pt currentColor solid;
-    padding: 0;
-    height: 0;
-    width: 80%;
-    content: "";
+aside, section {
+    margin: 18pt 0;
 }
 
 footer {
-    margin-top: 18pt;
-    font-weight: 200;
-    font-size: 12pt;
-    line-height: 16pt;
-    text-align: right;
+    margin: 18pt 0 0;
 }
 
 blockquote > footer:last-child::before {
@@ -110,105 +66,46 @@ blockquote > footer:last-child::before {
 
 header {
     margin: 36pt 0 18pt;
-    border-image-width: 0 0 2pt;
-    border-image-slice: 100% 0;
-    padding: 0 0 16pt 0;
-}
-
-body > nav ~ main {
-    padding-top: 36pt;
-}
-
-nav, section {
-    margin: 18pt 0;
-}
-
-body > nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    margin: 0;
-    padding: 0 12pt;
-    height: 36pt;
-    white-space: nowrap;
-    overflow: auto;
-    z-index: 99;
-}
-
-body > nav:not(.alts)::after {
-    top: 36pt;
-}
-
-body > nav.alts {
-    top: 36pt;
-    margin: 0;
-    padding: 0;
-}
-
-@media print {
-    body > nav {
-        display: none;
-    }
+    border-bottom: 2pt solid;
+    padding: 0 0 16pt;
 }
 
 /*  TABLES  */
+
+caption {
+    margin: 0;
+    padding: 4.5pt 3.75pt;
+}
+
+table {
+    margin: 18pt auto;
+    border-collapse: separate;
+    border-spacing: 1.875pt 2.25pt;
+    padding: 0;
+}
+
+tbody + tbody::before {
+    display: table-row;
+    height: 18pt;
+}
+
+td > table:only-child {
+    margin: auto;
+    width: 100%;
+}
+
+td, th {
+    border: none;
+    border-radius: 1.875pt;
+    padding: 2.25pt 1.875pt;
+    vertical-align: top;
+}
 
 /*  LISTS  */
 
 ul, ol, dl {
     margin: 0;
-    padding: 0 0 0 24pt;
-}
-
-:not(li) > ul:only-child, :not(li) > ol:only-child, :not(li) > dl:only-child,
-h1 + ul:last-child, h1 + ol:last-child, h1 + dl:last-child,
-h2 + ul:last-child, h2 + ol:last-child, h2 + dl:last-child {
-    padding: 0;
-}
-
-ul {
-    list-style-type: circle;
-}
-
-nav ul {
-    list-style-type: none;
-}
-
-li ul {
-    list-style-type: square;
-}
-
-li li ul {
-    list-style-type: disc;
-}
-
-li li li ul {
-    list-style-type: circle;
-}
-
-li li li li ul {
-    list-style-type: square;
-}
-
-ol {
-    list-style-type: upper-roman;
-}
-
-li ol {
-    list-style-type: decimal-leading-zero;
-}
-
-li li ol {
-    list-style-type: lower-latin;
-}
-
-li li li ol {
-    list-style-type: lower-greek;
-}
-
-li li li li ol {
-    list-style-type: decimal;
+    padding: 0 0 0 30pt;
 }
 
 dt {
@@ -219,7 +116,7 @@ dt {
 }
 
 dd {
-    margin: 0 0 0 24pt;
+    margin: 0 0 0 30pt;
     padding: 0;
 }
 
@@ -236,12 +133,8 @@ dd:after {
 
 /*  BLOCK ELEMENTS  */
 
-blockquote, h1, h2, h3, p {
-    clear: both;
-}
-
 blockquote {
-    margin: 18pt 12pt;
+    margin: 18pt 15pt;
 }
 
 figcaption {
@@ -263,20 +156,13 @@ figure {
     margin: 18pt auto;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+}
+
 h1 {
-    margin: 0 0 0 -72pt;
-}
-
-@media (min-width: 384px) and (max-width: 576px) {
-    h1 {
-        margin: 0 0 0 -36pt;
-    }
-}
-
-@media (max-width: 384px) {
-    h1 {
-        margin: 0;
-    }
+    margin: 9pt 0;
 }
 
 h2 {
@@ -307,6 +193,11 @@ hr::after {
     height: 18pt;
 }
 
+iframe[src*="//youtube.com/embed/"], iframe[src*="//www.youtube.com/embed/"] {
+    width: 560px;
+    height: 315px;
+}
+
 h1 img, h2 img, h3 img, h4 img, h5 img, h6 img, p img, li img, dt img, dd img, pre img, blockquote img,
 h1 svg, h2 svg, h3 svg, h4 svg, h5 svg, h6 svg, p svg, li svg, dt svg, dd svg, pre svg, blockquote svg {
     display: inline-block;
@@ -326,13 +217,13 @@ p {
 }
 
 footer h3 + p, footer p + p {
-    margin-top: 12pt;
+    margin-top: 14.4pt;
 }
 
 p + p::before {
     position: absolute;
     top: 0;
-    left: 6pt;
+    left: 8pt;
 }
 
 blockquote p::before, blockquote p + p::before {
@@ -344,19 +235,7 @@ blockquote p::before, blockquote p + p::before {
 
 /*  PHRASING  */
 
-body > nav a[href] {
-    display: inline-block;
-    margin: 0;
-    padding: 6pt 18pt;
-}
-
-body > nav.alts a[href] {
-    margin: 0 1.5pt;
-    border-radius: 2pt;
-    padding: 2pt 3pt;
-}
-
-@supports (text-decoration-style: dotted) or (-moz-text-decoration-style: dotted) or (-webkit-text-decoration-style: dotted) {
+@supports (text-decoration-style: dotted) {
     abbr {
         border: none;
     }
