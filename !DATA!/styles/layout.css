@@ -12,6 +12,10 @@
     }
 }
 
+*:root *:not(html)[hidden] {
+    display: none;
+}
+
 /*  PAGE LAYOUT  */
 
 html {
