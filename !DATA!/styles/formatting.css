@@ -20,8 +20,6 @@
 *:root {
     line-height: 18pt;
     text-align: justify;
-    -moz-text-align-last: center;
-    text-align-last: center;
     quotes: "“" "”" "‘" "’";
 }
 
@@ -50,14 +48,28 @@ footer {
     text-align: right;
 }
 
+header {
+    text-align: center;
+}
+
 /*  TABLES  */
+
+table {
+    text-align: center;
+}
+
+tbody + tbody::before {
+    content: "";
+}
+
+th {
+    text-decoration: underline;
+}
 
 /*  LISTS  */
 
 ul, ol, dl {
     text-align: left;
-    -moz-text-align-last: auto;
-    text-align-last: auto;
 }
 
 ul {
@@ -126,14 +138,10 @@ dd::after {
 figcaption {
     line-height: 14.4pt;
     text-align: right;
-    -moz-text-align-last: auto;
-    text-align-last: auto;
 }
 
 h1, h2, h3, h4, h5, h6 {
     text-align: left;
-    -moz-text-align-last: auto;
-    text-align-last: auto;
 }
 
 h1 {
@@ -206,7 +214,6 @@ footer p + p::before {
 
 a[href] {
     text-decoration: underline;
-    -moz-text-decoration-style: dashed;
     text-decoration-style: dashed;
 }
 

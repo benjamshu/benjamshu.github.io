@@ -235,6 +235,10 @@ blockquote p::before, blockquote p + p::before {
 
 /*  PHRASING  */
 
+a[href] {
+    transition: text-decoration-color .5s;
+}
+
 @supports (text-decoration-style: dotted) {
     abbr {
         border: none;
