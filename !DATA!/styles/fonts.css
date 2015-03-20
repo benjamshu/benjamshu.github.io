@@ -55,7 +55,7 @@ figcaption {
 
 h1 {
     font-size: 30pt;
-    font-weight: 300;
+    font-weight: 100;
 }
 
 h2 {
@@ -110,4 +110,8 @@ small {
 
 strong {
     font-weight: 400;
+}
+
+h1 u {
+    font-weight: 300;
 }

@@ -45,7 +45,7 @@ body::after {
 
 /*  SECTIONING  */
 
-main, article, section, aside, nav, header, footer {
+main, article, section, aside, nav, header, footer, div {
     display: block;
     clear: both;
     margin: 0;
