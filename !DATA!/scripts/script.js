@@ -99,9 +99,11 @@ function init() {
 
     checkLinks();
 
-    //  export-js
-    document.getElementsByTagName("MAIN").item(0).appendChild(
-    Export.init(document.createElement("FOOTER")));
+    //  twitter setup
+    window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
+
+    //  export-js setup
+    document.getElementsByTagName("MAIN").item(0).appendChild(Export.init(document.createElement("FOOTER")));
     document.styleSheets.item(0).insertRule("@media print{main > footer:last-child {display: none;}}", document.styleSheets.item(0).cssRules.length);
 
     displayAltLinks();
