@@ -74,6 +74,8 @@ th {
 
 ul, ol, dl {
     text-align: left;
+    -moz-text-align-last: auto;
+    text-align-last: auto;
 }
 
 ul {
@@ -146,6 +148,8 @@ figcaption {
 
 h1, h2, h3, h4, h5, h6 {
     text-align: left;
+    -moz-text-align-last: auto;
+    text-align-last: auto;
 }
 
 h1 {
