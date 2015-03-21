@@ -45,7 +45,9 @@ body::before, body::after, #global-nav::after {
 
 footer {
     line-height: 14.4pt;
-    text-align: right;
+    text-align: justify;
+    -moz-text-align-last: center;
+    text-align-last: center;
 }
 
 header {

@@ -145,7 +145,7 @@ figcaption {
     margin: 0;
 }
 
-figure, iframe, img, svg {
+figure, iframe, img, svg, video {
     display: block;
     margin: auto;
     border: none;
