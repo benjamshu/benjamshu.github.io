@@ -51,7 +51,9 @@ footer {
 }
 
 header {
-    text-align: center;
+    text-align: justify;
+    -moz-text-align-last: center;
+    text-align-last: center;
 }
 
 /*  TABLES  */
@@ -184,7 +186,7 @@ h3 + p, p + p {
     text-indent: 30pt;
 }
 
-footer h3 + p, footer p + p {
+footer h3 + p, footer p + p, header h3 + p, header p + p {
     text-indent: 0;
 }
 
@@ -208,7 +210,7 @@ blockquote p:last-of-type::after {
     content: close-quote;
 }
 
-footer p + p::before {
+footer p + p::before, header p + p::before {
     content: none;
 }
 

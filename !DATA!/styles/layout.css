@@ -224,6 +224,10 @@ footer h3 + p, footer p + p {
     margin-top: 14.4pt;
 }
 
+header h3 + p, header p + p  {
+    margin-top: 18pt;
+}
+
 p + p::before {
     position: absolute;
     top: 0;
