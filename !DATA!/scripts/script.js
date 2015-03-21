@@ -1,5 +1,5 @@
 /* jslint asi:true, browser:true */
-/* global Export */
+/* global Export, Randomizer */
 
 var current_scroll_target = 0;
 var current_scroll_velocity = 0;
@@ -8,7 +8,8 @@ var should_push_state = false;
 var Request = new XMLHttpRequest();
 
 var scripts = [
-    "http://home.benjam.xyz/!DATA!/scripts/export-js/export.js"
+    "http://home.benjam.xyz/!DATA!/scripts/export-js/export.js",
+    "http://home.benjam.xyz/!DATA!/scripts/randomizer-js/randomizer.js"
 ]
 var scripts_loaded = 0;
 
@@ -99,9 +100,14 @@ function init() {
 
     checkLinks();
 
-    //  export-js
-    document.getElementsByTagName("MAIN").item(0).appendChild(
-    Export.init(document.createElement("FOOTER")));
+    //  twitter setup
+    window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
+
+    //  randomizer setup
+    Randomizer.init();
+
+    //  export-js setup
+    document.getElementsByTagName("MAIN").item(0).appendChild(Export.init(document.createElement("FOOTER")));
     document.styleSheets.item(0).insertRule("@media print{main > footer:last-child {display: none;}}", document.styleSheets.item(0).cssRules.length);
 
     displayAltLinks();
