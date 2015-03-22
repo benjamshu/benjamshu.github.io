@@ -51,7 +51,7 @@ del, s, small {
 }
 
 html blockquote {
-    color: #5d2721;  /* should be coloured */
+    color: #5d2721;
 }
 
 figure, iframe, img, svg {
@@ -64,7 +64,7 @@ hr {
 }
 
 html p::before, html p::after {
-    color: #f9a59b;  /* should be coloured */
+    color: #f9a59b;
 }
 
 /*  PHRASING  */
@@ -82,22 +82,18 @@ b, em {
     color: #3b3b3b;
 }
 
-body > nav.alts a[href] {
-    color: #a3a3a3;
-}
-
-body > nav.alts a[href].alts-current:not(:hover) {
-    color: #3b3b3b;
+dfn {
+    color: #5d2721;
 }
 
 html mark {
     background: #cccccc;  /* should be coloured */
 }
 
-u {
-    color: #e83f2c;
-}
-
 figcaption u {
     color: #1c1c1c;
+}
+
+u {
+    color: #e83f2c;
 }
