@@ -8,8 +8,8 @@ var should_push_state = false;
 var Request = new XMLHttpRequest();
 
 var scripts = [
-    "http://home.benjam.xyz/!DATA!/scripts/export-js/export.js",
-    "http://home.benjam.xyz/!DATA!/scripts/randomizer-js/randomizer.js"
+    "http://literallybenjam.github.io/!DATA!/scripts/export-js/export.js",
+    "http://literallybenjam.github.io/!DATA!/scripts/randomizer-js/randomizer.js"
 ]
 var scripts_loaded = 0;
 
