@@ -1,5 +1,6 @@
 @import url(http://vault.benjam.xyz/fonts/style.css);
 @import url(news-vertical/style.css);
+@import url(acad-at-print/style.css);
 
 html, *[lang], *:lang(und) {
     font-family: Symbola, Unifont, serif;
