@@ -3,19 +3,19 @@
 @import url(acad-at-print/style.css);
 
 html, *[lang], *:lang(und) {
-    font-family: Symbola, Unifont, serif;
+    font-family: Source Serif Pro, Source Han Sans TW, Symbola, Unifont, serif;
 }
 
 *:lang(ko), *:lang(art-Hang), *:lang(und-Hang) {
-    font-family: Source Han Sans KR, Symbola, Unifont, sans-serif;
+    font-family: Source Han Sans KR, Source Serif Pro, Symbola, Unifont, sans-serif;
 }
 
 *:lang(zh), *:lang(cmn), *:lang(art-Hani), *:lang(art-Hant), *:lang(und-Hani), *:lang(und-Hant) {
-    font-family: Source Han Sans TW, Symbola, Unifont, sans-serif;
+    font-family: Source Han Sans TW, Source Serif Pro, Symbola, Unifont, sans-serif;
 }
 
 *:lang(en), *:lang(art-Latn), *:lang(und-Latn) {
-    font-family: Source Serif Pro, Symbola, Unifont, serif;
+    font-family: Source Serif Pro, Source Han Sans TW, Symbola, Unifont, serif;
 }
 
 @media print {
