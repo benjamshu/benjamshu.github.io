@@ -28,6 +28,8 @@ html, *[lang], *:lang(und) {
         font-size: .75em;
         line-height: inherit;
         color: inherit;
+        background: transparent;
+        box-shadow: none;
         margin: none;
         padding: none;
     }
