@@ -27,7 +27,7 @@ html, *[lang], *:lang(und) {
         position: static;
         opacity: 1;
         visibility: visible;
-        font-size: calc(1rem / 1.4);
+        font-size: .75em;
         line-height: inherit;
         color: inherit;
         background: transparent;
