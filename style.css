@@ -2,11 +2,6 @@
 @import url(news-vertical/style.css);
 @import url(acad-at-print/style.css);
 
-
-html {
-    line-height: 1.4rem;
-}
-
 html, *[lang], *:lang(und) {
     font-family: Source Serif Pro, Source Han Sans TW, Symbola, Unifont, serif;
 }
@@ -32,7 +27,7 @@ html, *[lang], *:lang(und) {
         position: static;
         opacity: 1;
         visibility: visible;
-        font-size: .75em;
+        font-size: calc(1rem / 1.4);
         line-height: inherit;
         color: inherit;
         background: transparent;
