@@ -23,7 +23,13 @@ html, *[lang], *:lang(und) {
     *.footnote.note {
         display: inline;
         position: static;
-        font-size: 1ex;
+        opacity: 1;
+        visibility: visible;
+        font-size: .75em;
+        line-height: inherit;
+        color: inherit;
+        margin: none;
+        padding: none;
     }
     *.footnote.note::before {
         content: " [";
