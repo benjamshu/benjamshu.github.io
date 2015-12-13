@@ -20,7 +20,7 @@ html, *[lang], *:lang(und) {
 
 @media print {
 
-    *.footnote *.note {
+    *:root:root:root:root:root:root:root:root:root:root *.footnote *.note {
         display: inline;
         position: static;
         opacity: 1;
@@ -33,10 +33,10 @@ html, *[lang], *:lang(und) {
         margin: none;
         padding: none;
     }
-    *.footnote *.note::before {
+    *:root:root:root:root:root:root:root:root:root:root *.footnote *.note::before {
         content: " [";
     }
-    *.footnote *.note::after {
+    *:root:root:root:root:root:root:root:root:root:root *.footnote *.note::after {
         content: "]";
     }
 
