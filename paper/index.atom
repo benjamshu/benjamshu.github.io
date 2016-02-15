@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:webfeeds=”http://webfeeds.org/rss/1.0″>
     <title>📰</title>
     <subtitle>A news and culture review by benjam!</subtitle>
     <link rel="alternate" type="text/html" href="http://benjam.xyz/paper/"/>
