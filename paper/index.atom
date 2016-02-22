@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom" xmlns:webfeeds=”http://webfeeds.org/rss/1.0″>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:webfeeds="http://webfeeds.org/rss/1.0">
     <title>📰</title>
     <subtitle>A news and culture review by benjam!</subtitle>
     <link rel="alternate" type="text/html" href="http://benjam.xyz/paper/"/>
     <link rel="self" href="http://benjam.xyz/paper/index.atom"/>
-    <updated>2016-02-15T03:22:00-08:00</updated>
+    <updated>2016-02-15T05:43:00-08:00</updated>
     <author>
         <name>benjam!</name>
         <uri>http://benjam.xyz/</uri>
