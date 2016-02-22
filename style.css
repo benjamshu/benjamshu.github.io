@@ -45,5 +45,8 @@ pre, pre[lang], pre *[lang], code, code[lang], code *[lang] {
     *:root:root:root:root:root:root:root:root:root:root *.footnote *.note::after {
         content: "]";
     }
+    *:root:root:root:root:root:root:root:root:root:root footer#news-footnotes {
+        display: none;
+    }
 
 }
